@@ -1,12 +1,16 @@
 export function validateApiKeys() {
   const requiredKeys = {
+    'OPENAI_API_KEY': process.env.OPENAI_API_KEY
+  };
+
+  const optionalKeys = {
     'ELEVENLABS_API_KEY': process.env.ELEVENLABS_API_KEY,
-    'SYNTHFLOW_API_KEY': process.env.SYNTHFLOW_API_KEY,
     'ANAM_API_KEY': process.env.ANAM_API_KEY
   };
 
   const missing = [];
   
+  // Check required keys
   for (const [keyName, keyValue] of Object.entries(requiredKeys)) {
     if (!keyValue || keyValue.trim() === '' || keyValue === `your_${keyName.toLowerCase()}_here`) {
       missing.push(keyName);
@@ -14,12 +18,23 @@ export function validateApiKeys() {
   }
 
   if (missing.length > 0) {
-    throw new Error(`Missing or invalid API keys: ${missing.join(', ')}. Please check your .env file.`);
+    throw new Error(`Missing or invalid required API keys: ${missing.join(', ')}. Please check your .env file.`);
   }
 
   // Validate key formats
-  if (!process.env.ELEVENLABS_API_KEY.startsWith('sk_')) {
+  if (process.env.OPENAI_API_KEY && !process.env.OPENAI_API_KEY.startsWith('sk-')) {
+    console.warn('Warning: OpenAI API key should start with "sk-"');
+  }
+
+  if (process.env.ELEVENLABS_API_KEY && !process.env.ELEVENLABS_API_KEY.startsWith('sk_')) {
     console.warn('Warning: ElevenLabs API key should start with "sk_"');
+  }
+
+  // Check optional keys and warn if missing
+  for (const [keyName, keyValue] of Object.entries(optionalKeys)) {
+    if (!keyValue || keyValue.trim() === '' || keyValue === `your_${keyName.toLowerCase()}_here`) {
+      console.warn(`Warning: Optional API key ${keyName} not configured. Some features may not work.`);
+    }
   }
 
   return true;
@@ -61,7 +76,7 @@ export function validateUserInput(input, inputType = 'text') {
 export function validateSessionConfig(config) {
   const { userContext = {}, mode, companyData = {} } = config;
   
-  const validModes = ['strategy', 'founder', 'exec', 'team'];
+  const validModes = ['efficiency', 'moonshot', 'customer', 'investor'];
   if (!validModes.includes(mode)) {
     throw new Error(`Invalid mode: ${mode}. Valid modes: ${validModes.join(', ')}`);
   }

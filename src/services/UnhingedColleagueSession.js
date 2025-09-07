@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { ElevenLabsService } from './ElevenLabsService.js';
 import { OpenAIChallengerService } from './OpenAIChallengerService.js';
-import { MockElevenLabsService } from './MockElevenLabsService.js';
 import { ChallengerPersona } from '../persona/ChallengerPersona.js';
 import { OutputGenerator } from '../utils/OutputGenerator.js';
 
@@ -34,19 +33,38 @@ export class UnhingedColleagueSession {
     try {
       this.logger.info(`🔧 Initializing session ${this.sessionId} in ${this.mode} mode`);
       
-      // Initialize services with real APIs first, fallback to mocks
+      // Initialize ElevenLabs service
       try {
         this.logger.info('🎙️ Initializing ElevenLabs service...');
         if (process.env.ELEVENLABS_API_KEY && process.env.ELEVENLABS_API_KEY !== 'your_elevenlabs_key') {
           this.elevenLabsService = new ElevenLabsService();
           this.logger.info('✅ Real ElevenLabs service initialized');
         } else {
-          this.elevenLabsService = new MockElevenLabsService();
-          this.logger.info('✅ Mock ElevenLabs service initialized (no API key)');
+          // Create simple fallback for ElevenLabs
+          this.elevenLabsService = {
+            generateSpeech: async (text) => {
+              this.logger.info('🔇 ElevenLabs fallback: returning empty audio stream');
+              return Buffer.alloc(0);
+            },
+            speechToText: async (audioBuffer) => {
+              this.logger.info('🔇 ElevenLabs fallback: returning placeholder transcription');
+              return 'Voice input received (ElevenLabs not configured)';
+            }
+          };
+          this.logger.info('✅ ElevenLabs fallback service initialized (no API key)');
         }
       } catch (error) {
-        this.logger.warn('⚠️ Real ElevenLabs failed, using mock:', error.message);
-        this.elevenLabsService = new MockElevenLabsService();
+        this.logger.warn('⚠️ Real ElevenLabs failed, using fallback:', error.message);
+        this.elevenLabsService = {
+          generateSpeech: async (text) => {
+            this.logger.info('🔇 ElevenLabs fallback: returning empty audio stream');
+            return Buffer.alloc(0);
+          },
+          speechToText: async (audioBuffer) => {
+            this.logger.info('🔇 ElevenLabs fallback: returning placeholder transcription');
+            return 'Voice input received (ElevenLabs not configured)';
+          }
+        };
       }
       
       try {
