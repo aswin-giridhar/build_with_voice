@@ -9,7 +9,6 @@ class MeetStyleUnhingedColleague {
         this.mediaRecorder = null;
         this.audioChunks = [];
         this.chatOpen = false;
-        this.anamClient = null;
         
         // Persona configurations - Now centrally managed via server
         // Avatar IDs are controlled by environment variables on the server
@@ -59,6 +58,7 @@ class MeetStyleUnhingedColleague {
 
         // Start session
         document.getElementById('start-session-btn').addEventListener('click', () => {
+            console.log('🎬 Start session button clicked!');
             this.startSession();
         });
 
@@ -75,7 +75,7 @@ class MeetStyleUnhingedColleague {
         document.getElementById('record-btn').addEventListener('touchstart', (e) => {
             e.preventDefault();
             this.startRecording();
-        });
+        }, { passive: false });
         document.getElementById('record-btn').addEventListener('touchend', (e) => {
             e.preventDefault();
             this.stopRecording();
@@ -174,12 +174,19 @@ class MeetStyleUnhingedColleague {
     }
 
     async startSession() {
+        console.log('🚀 startSession() method called');
+        console.log('🎭 Current persona:', this.currentPersona);
+        console.log('📞 Socket connected:', this.socket.connected);
+        
         this.updateStatus('Starting session...', 'connecting');
         
         try {
+            console.log('🎤 Requesting microphone permission...');
             // Request microphone permission
             await navigator.mediaDevices.getUserMedia({ audio: true });
+            console.log('✅ Microphone permission granted');
             
+            console.log('📡 Emitting start-session event...');
             // Start session with selected persona
             this.socket.emit('start-session', {
                 persona: this.currentPersona,
@@ -194,9 +201,10 @@ class MeetStyleUnhingedColleague {
                     industry: 'technology'
                 }
             });
+            console.log('✅ start-session event emitted');
             
         } catch (error) {
-            console.error('Failed to start session:', error);
+            console.error('❌ Failed to start session:', error);
             this.updateStatus('Microphone access denied', 'error');
         }
     }
@@ -435,32 +443,10 @@ class MeetStyleUnhingedColleague {
         }, 300);
     }
 
-    async waitForAnamSDK() {
-        return new Promise((resolve, reject) => {
-            if (window.AnamSDK) {
-                resolve();
-                return;
-            }
-            
-            const timeout = setTimeout(() => {
-                reject(new Error('Anam SDK loading timeout'));
-            }, 10000); // 10 second timeout
-            
-            window.addEventListener('anam-sdk-ready', () => {
-                clearTimeout(timeout);
-                resolve();
-            });
-            
-            window.addEventListener('anam-sdk-error', (event) => {
-                clearTimeout(timeout);
-                reject(event.detail);
-            });
-        });
-    }
 
     async initializeAnamAvatar() {
         try {
-            this.updateStatus('Loading Anam.ai avatar...', 'connecting');
+            this.updateStatus('Loading Anam.ai avatar using direct API...', 'connecting');
             
             // Step 1: Get session token from server with persona
             console.log(`🎭 Requesting Anam session token for persona: ${this.currentPersona}...`);
@@ -481,7 +467,7 @@ class MeetStyleUnhingedColleague {
             }
             
             const tokenData = await tokenResponse.json();
-            const { sessionToken, persona, avatarId } = tokenData;
+            const { sessionToken, persona, avatarId, voiceId, llmId } = tokenData;
             console.log(`✅ Anam session token received for ${persona} (Avatar: ${avatarId})`);
             console.log('🔍 Session token details:', { 
                 tokenLength: sessionToken?.length, 
@@ -489,126 +475,30 @@ class MeetStyleUnhingedColleague {
                 persona 
             });
             
+            // Create avatar config from server response
+            const avatarConfig = {
+                avatarId: avatarId,
+                voiceId: voiceId,
+                llmId: llmId,
+                persona: this.currentPersona
+            };
+            
             // Update display with actual persona info
             this.updatePersonaDisplay();
             
-            // Step 2: Wait for Anam SDK to be ready
-            console.log('📦 Waiting for Anam SDK...');
-            await this.waitForAnamSDK();
+            // Step 2: Use Direct API - NO SDK needed!
+            console.log('🚀 Initializing Anam Direct API...');
             
-            // Step 3: Create Anam client with detailed error handling
-            console.log('🔌 Creating Anam client...');
-            console.log('🔍 Using session token:', sessionToken.substring(0, 20) + '...');
+            // Initialize Direct API with session token and avatar config
+            await window.AnamDirectAPI.initialize(
+                sessionToken, 
+                avatarConfig, 
+                'anam-video'
+            );
             
-            try {
-                this.anamClient = window.AnamSDK.createClient(sessionToken);
-                console.log('✅ Anam client created successfully');
-                
-                // Step 3.1: Add event listeners based on official documentation
-                this.setupAnamEventListeners();
-                
-            } catch (clientError) {
-                console.error('❌ Failed to create Anam client:', clientError);
-                throw new Error(`Client creation failed: ${clientError.message}`);
-            }
             
-            // Step 4: Stream to video element with enhanced error handling
-            console.log('🎥 Starting video stream...');
-            
-            try {
-                const videoElement = document.getElementById('anam-video');
-                
-                // Get user input stream for better integration
-                let userInputStream = null;
-                try {
-                    userInputStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-                    console.log('🎤 User input stream obtained');
-                } catch (audioError) {
-                    console.log('⚠️ Could not get user audio input:', audioError.message);
-                }
-                
-                // Method 1: streamToVideoElement with user input stream (recommended by docs)
-                console.log('🔄 Attempting Method 1: streamToVideoElement with user input...');
-                try {
-                    if (userInputStream) {
-                        await this.anamClient.streamToVideoElement('anam-video', userInputStream);
-                    } else {
-                        await this.anamClient.streamToVideoElement('anam-video');
-                    }
-                    console.log('✅ Method 1 successful');
-                } catch (method1Error) {
-                    console.log('❌ Method 1 failed:', method1Error.message);
-                    
-                    // Method 2: Try with video element directly
-                    console.log('🔄 Attempting Method 2: streamToVideoElement with element...');
-                    try {
-                        if (userInputStream) {
-                            await this.anamClient.streamToVideoElement(videoElement, userInputStream);
-                        } else {
-                            await this.anamClient.streamToVideoElement(videoElement);
-                        }
-                        console.log('✅ Method 2 successful');
-                    } catch (method2Error) {
-                        console.log('❌ Method 2 failed:', method2Error.message);
-                        
-                        // Method 3: Use stream() method for manual control (from docs)
-                        console.log('🔄 Attempting Method 3: stream() method...');
-                        try {
-                            if (userInputStream) {
-                                const [videoStream] = await this.anamClient.stream(userInputStream);
-                                if (videoStream && videoElement) {
-                                    videoElement.srcObject = videoStream;
-                                    await videoElement.play();
-                                    console.log('✅ Method 3 successful');
-                                } else {
-                                    throw new Error('No video stream returned from stream() method');
-                                }
-                            } else {
-                                throw new Error('User input stream required for stream() method');
-                            }
-                        } catch (method3Error) {
-                            console.log('❌ Method 3 failed:', method3Error.message);
-                            
-                            // Method 4: Try basic streamToVideoElement without any parameters
-                            console.log('🔄 Attempting Method 4: basic streamToVideoElement...');
-                            try {
-                                await this.anamClient.streamToVideoElement('anam-video');
-                                console.log('✅ Method 4 successful');
-                            } catch (method4Error) {
-                                console.log('❌ Method 4 failed:', method4Error.message);
-                                
-                                // All methods failed, throw comprehensive error
-                                throw new Error(`All streaming methods failed. Errors: Method1: ${method1Error.message}, Method2: ${method2Error.message}, Method3: ${method3Error.message}, Method4: ${method4Error.message}`);
-                            }
-                        }
-                    }
-                }
-                
-                this.updateStatus('Anam.ai avatar ready', 'connected');
-                console.log('✅ Anam avatar initialized successfully');
-                
-            } catch (streamError) {
-                console.error('❌ Video stream failed:', streamError);
-                
-                // Enhanced error handling with specific error types
-                let errorMessage = streamError.message;
-                
-                if (streamError.message && streamError.message.includes('500')) {
-                    errorMessage = `Server Error: Avatar streaming service unavailable (${avatarId})`;
-                } else if (streamError.message && streamError.message.includes('401')) {
-                    errorMessage = `Authentication Error: Session token may be invalid`;
-                } else if (streamError.message && streamError.message.includes('404')) {
-                    errorMessage = `Not Found: Avatar streaming endpoint not available`;
-                } else if (streamError.message && streamError.message.includes('timeout')) {
-                    errorMessage = `Timeout: Avatar took too long to load (network issue)`;
-                } else if (streamError.message && streamError.message.includes('Unknown error')) {
-                    errorMessage = `Anam Service Error: The avatar streaming service is currently unavailable`;
-                } else if (streamError.message && streamError.message.includes('All streaming methods failed')) {
-                    errorMessage = `Multiple streaming methods failed - this may be a temporary service issue`;
-                }
-                
-                throw new Error(errorMessage);
-            }
+            this.updateStatus('Anam.ai avatar ready', 'connected');
+            console.log('✅ Anam avatar initialized successfully');
             
         } catch (error) {
             console.error('❌ Failed to initialize Anam avatar:', error);
@@ -618,85 +508,6 @@ class MeetStyleUnhingedColleague {
         }
     }
 
-    setupAnamEventListeners() {
-        if (!this.anamClient) return;
-        
-        console.log('🎧 Setting up Anam event listeners...');
-        
-        // Use proper event constants based on official documentation
-        // Fallback to string constants if AnamEvent enum not available
-        const AnamEvent = window.AnamSDK.AnamEvent || {
-            CONNECTION_ESTABLISHED: 'CONNECTION_ESTABLISHED',
-            SESSION_READY: 'SESSION_READY',
-            CONNECTION_CLOSED: 'CONNECTION_CLOSED',
-            VIDEO_PLAY_STARTED: 'VIDEO_PLAY_STARTED',
-            MESSAGE_HISTORY_UPDATED: 'MESSAGE_HISTORY_UPDATED',
-            MESSAGE_STREAM_EVENT_RECEIVED: 'MESSAGE_STREAM_EVENT_RECEIVED',
-            INPUT_AUDIO_STREAM_STARTED: 'INPUT_AUDIO_STREAM_STARTED',
-            TALK_STREAM_INTERRUPTED: 'TALK_STREAM_INTERRUPTED'
-        };
-        
-        try {
-            // Connection events
-            this.anamClient.addListener(AnamEvent.CONNECTION_ESTABLISHED, () => {
-                console.log('🔗 Anam connection established');
-                this.updateStatus('Connected to Anam', 'connected');
-            });
-            
-            this.anamClient.addListener(AnamEvent.CONNECTION_CLOSED, () => {
-                console.log('🔌 Anam connection closed');
-                this.updateStatus('Connection closed', 'error');
-            });
-            
-            // Video events
-            this.anamClient.addListener(AnamEvent.VIDEO_PLAY_STARTED, () => {
-                console.log('🎥 Video stream started');
-                // Hide loading indicator when video actually starts
-                const loadingDiv = document.getElementById('avatar-loading');
-                if (loadingDiv) {
-                    loadingDiv.style.display = 'none';
-                }
-                this.updateStatus('Avatar ready', 'connected');
-            });
-            
-            // Conversation events
-            this.anamClient.addListener(AnamEvent.MESSAGE_HISTORY_UPDATED, (messages) => {
-                console.log('💬 Message history updated:', messages);
-                // Update chat with full conversation history
-                this.updateChatFromHistory(messages);
-            });
-            
-            this.anamClient.addListener(AnamEvent.MESSAGE_STREAM_EVENT_RECEIVED, (event) => {
-                console.log('📝 Message stream event:', event);
-                if (event.type === 'persona') {
-                    // Persona is speaking - show real-time transcription
-                    this.updatePersonaTranscript(event.text);
-                    this.animateAvatar('speaking');
-                } else if (event.type === 'user') {
-                    // User finished speaking
-                    this.updateUserTranscript(event.text);
-                }
-            });
-            
-            // Audio events
-            this.anamClient.addListener(AnamEvent.INPUT_AUDIO_STREAM_STARTED, (stream) => {
-                console.log('🎤 Audio input stream started');
-                this.updateStatus('Microphone active', 'connected');
-            });
-            
-            // Talk stream events
-            this.anamClient.addListener(AnamEvent.TALK_STREAM_INTERRUPTED, (event) => {
-                console.log('⚠️ Talk stream interrupted:', event.correlationId);
-                this.handleStreamInterruption(event.correlationId);
-            });
-            
-            console.log('✅ Anam event listeners configured');
-            
-        } catch (eventError) {
-            console.warn('⚠️ Some event listeners could not be configured:', eventError.message);
-            // Continue without events - basic functionality should still work
-        }
-    }
 
     updateChatFromHistory(messages) {
         // Clear existing messages and rebuild from history
@@ -959,8 +770,7 @@ class MeetStyleUnhingedColleague {
         try {
             if (this.anamClient) {
                 // Cleanup existing client
-                this.anamClient = null;
-            }
+                    }
             
             // Initialize new persona
             await this.initializeAnamAvatar();

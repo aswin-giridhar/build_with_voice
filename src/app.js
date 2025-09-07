@@ -62,7 +62,6 @@ app.use(helmet({
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.static(join(__dirname, '../public')));
-app.use('/anam-sdk', express.static(join(__dirname, '../node_modules/@anam-ai/js-sdk/dist')));
 
 // Validate API keys on startup
 try {
@@ -98,9 +97,9 @@ app.get('/test', (req, res) => {
 const personaConfigurations = {
   efficiency: {
     name: "Efficiency Maximizer",
-    avatarId: process.env.ANAM_AVATAR_EFFICIENCY || "481542ce-2746-4989-bd70-1c3e8ebd069e",
-    voiceId: "6bfbe25a-979d-40f3-a92b-5394170af54b",
-    llmId: "0934d97d-0c3a-4f33-91b0-5e136a0ef466",
+    avatarId: process.env.ANAM_EFFICIENCY_AVATAR_ID,
+    voiceId: process.env.ANAM_EFFICIENCY_VOICE_ID,
+    llmId: process.env.ANAM_EFFICIENCY_LLM_ID,
     systemPrompt: `[ROLE]
 You are a relentless high-performance colleague obsessed with speed, execution, and optimization. You act like a blunt but constructive operator who eliminates waste, compresses timelines, and forces ownership. Your role is to challenge ideas being presented and think critically about opportunities for efficiency and improvement. You are an entrepreneur at heart focused on business growth.
 
@@ -117,9 +116,9 @@ You are in a live strategy session. The user is brainstorming ideas and expects 
   },
   moonshot: {
     name: "Moonshot Incubator",
-    avatarId: process.env.ANAM_AVATAR_MOONSHOT || "e5fe7c2f-57cb-43e2-9e4c-e5c00d0c7185",
-    voiceId: "6bfbe25a-979d-40f3-a92b-5394170af54b",
-    llmId: "0934d97d-0c3a-4f33-91b0-5e136a0ef466",
+    avatarId: process.env.ANAM_MOONSHOT_AVATAR_ID,
+    voiceId: process.env.ANAM_MOONSHOT_VOICE_ID,
+    llmId: process.env.ANAM_MOONSHOT_LLM_ID,
     systemPrompt: `[ROLE]
 You are a visionary senior leader obsessed with bold ideas and transformative innovation. You act like an inspiring product visionary who refuses safe, incremental thinking and pushes for 10x impact. You set high expectations for your team and want them to innovate fast and efficiently. You have a serious tone reflecting your success.
 
@@ -135,9 +134,9 @@ You are in a live innovation brainstorm. The user is testing product, strategy, 
   },
   customer: {
     name: "Customer Oracle",
-    avatarId: process.env.ANAM_AVATAR_CUSTOMER || "d87de127-a4d9-451c-aa76-35c00831fb44",
-    voiceId: "6bfbe25a-979d-40f3-a92b-5394170af54b",
-    llmId: "0934d97d-0c3a-4f33-91b0-5e136a0ef466",
+    avatarId: process.env.ANAM_CUSTOMER_AVATAR_ID,
+    voiceId: process.env.ANAM_CUSTOMER_VOICE_ID,
+    llmId: process.env.ANAM_CUSTOMER_LLM_ID,
     systemPrompt: `[ROLE]
 You are a customer-obsessed visionary colleague who embodies presence, empathy, and gravitas. You are warm yet unflinching, pulling people in with a voice that feels calm but commanding. Your role is to challenge relentlessly on behalf of the customer, demanding clarity, simplicity, and truth.
 
@@ -157,9 +156,9 @@ You are in a live brainstorm where strategies are discussed. Your role is to sha
   },
   investor: {
     name: "Investor Mindset",
-    avatarId: process.env.ANAM_AVATAR_INVESTOR || "4b622e32-93c7-4b88-b93a-8b0df888eeb3",
-    voiceId: "6bfbe25a-979d-40f3-a92b-5394170af54b",
-    llmId: "0934d97d-0c3a-4f33-91b0-5e136a0ef466",
+    avatarId: process.env.ANAM_INVESTOR_AVATAR_ID,
+    voiceId: process.env.ANAM_INVESTOR_VOICE_ID,
+    llmId: process.env.ANAM_INVESTOR_LLM_ID,
     systemPrompt: `[ROLE]
 You are the Investor - an unfiltered colleague who evaluates every idea like a tough, sharp business person. You obsess over money, market, and execution. You challenge people with blunt, witty remarks that cut straight to financial truth.
 
@@ -227,7 +226,10 @@ app.post('/api/anam/session-token', async (req, res) => {
     res.json({ 
       sessionToken: data.sessionToken,
       persona: personaConfig.name,
-      avatarId: personaConfig.avatarId
+      avatarId: personaConfig.avatarId,
+      voiceId: personaConfig.voiceId,
+      llmId: personaConfig.llmId,
+      systemPrompt: personaConfig.systemPrompt
     });
     
   } catch (error) {

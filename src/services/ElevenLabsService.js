@@ -2,9 +2,12 @@ import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js';
 
 export class ElevenLabsService {
   constructor() {
+    // Store API key for direct API calls
+    this.apiKey = process.env.ELEVENLABS_API_KEY;
+    
     // Initialize ElevenLabs client
     this.client = new ElevenLabsClient({
-      apiKey: process.env.ELEVENLABS_API_KEY,
+      apiKey: this.apiKey,
     });
     
     this.voiceId = process.env.ELEVENLABS_VOICE_ID || 'pNInz6obpgDQGcFmaJgB';
@@ -49,12 +52,21 @@ export class ElevenLabsService {
       
       const response = await this.client.textToSpeech.convert(this.voiceId, {
         text: enhancedText,
-        modelId: this.modelId,
-        voiceSettings: voiceSettings,
+        model_id: this.modelId,
+        voice_settings: voiceSettings,
       });
       
-      // Convert response to buffer
-      const audioBuffer = Buffer.from(await response.arrayBuffer());
+      // Convert response to buffer - ElevenLabs client returns a ReadableStream
+      const chunks = [];
+      const reader = response.getReader();
+      
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        chunks.push(value);
+      }
+      
+      const audioBuffer = Buffer.concat(chunks);
       
       return {
         audioBuffer: audioBuffer,
@@ -98,17 +110,34 @@ export class ElevenLabsService {
 
   async speechToText(audioBuffer) {
     try {
-      // Convert buffer to file-like object for ElevenLabs STT
-      const audioBlob = new Blob([audioBuffer], { type: 'audio/wav' });
+      console.log('🎤 Converting speech to text with ElevenLabs...');
+      console.log('📊 Audio buffer size:', audioBuffer.length);
       
-      const response = await this.client.speechToText.convert({
-        audio: audioBlob,
-        model_id: this.sttModelId,
-        language_code: 'en', // Optional: specify language
-        tag_audio_events: false // Don't tag sounds like laughter
+      // Create FormData and send as file parameter as expected by ElevenLabs API
+      const formData = new FormData();
+      const audioBlob = new Blob([audioBuffer], { type: 'audio/wav' });
+      formData.append('file', audioBlob, 'audio.wav');
+      formData.append('model_id', this.sttModelId);
+      formData.append('language_code', 'en');
+      
+      // Use direct fetch instead of client library for better control
+      const response = await fetch('https://api.elevenlabs.io/v1/speech-to-text', {
+        method: 'POST',
+        headers: {
+          'xi-api-key': this.apiKey
+        },
+        body: formData
       });
       
-      return response.text;
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('❌ ElevenLabs STT API Error:', errorText);
+        throw new Error(`Status code: ${response.status}\nBody: ${errorText}`);
+      }
+      
+      const result = await response.json();
+      console.log('✅ Speech to text successful:', result.text);
+      return result.text;
       
     } catch (error) {
       console.error('ElevenLabs STT Error:', error);
