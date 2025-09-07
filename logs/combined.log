@@ -1068,3 +1068,38 @@
 {"level":"error","message":"Failed to start session: Failed to initialize Synthflow agent: Request failed with status code 404","stack":"Error: Failed to initialize Synthflow agent: Request failed with status code 404\n    at SynthflowService.initializeAgent (file:///E:/Hackathon/build_with_voice/src/services/SynthflowService.js:65:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async UnhingedColleagueSession.initialize (file:///E:/Hackathon/build_with_voice/src/services/UnhingedColleagueSession.js:81:7)\n    at async Socket.<anonymous> (file:///E:/Hackathon/build_with_voice/src/app.js:250:7)","timestamp":"2025-09-07T00:16:14.617Z"}
 {"level":"error","message":"Failed to initialize session 03fbd855-8f89-431d-9a95-0cf85374b1e1: Failed to initialize Synthflow agent: Request failed with status code 404","stack":"Error: Failed to initialize Synthflow agent: Request failed with status code 404\n    at SynthflowService.initializeAgent (file:///E:/Hackathon/build_with_voice/src/services/SynthflowService.js:65:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async UnhingedColleagueSession.initialize (file:///E:/Hackathon/build_with_voice/src/services/UnhingedColleagueSession.js:81:7)\n    at async Socket.<anonymous> (file:///E:/Hackathon/build_with_voice/src/app.js:250:7)","timestamp":"2025-09-07T00:16:14.784Z"}
 {"level":"error","message":"Failed to start session: Failed to initialize Synthflow agent: Request failed with status code 404","stack":"Error: Failed to initialize Synthflow agent: Request failed with status code 404\n    at SynthflowService.initializeAgent (file:///E:/Hackathon/build_with_voice/src/services/SynthflowService.js:65:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async UnhingedColleagueSession.initialize (file:///E:/Hackathon/build_with_voice/src/services/UnhingedColleagueSession.js:81:7)\n    at async Socket.<anonymous> (file:///E:/Hackathon/build_with_voice/src/app.js:250:7)","timestamp":"2025-09-07T00:16:14.785Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T00:27:29.537Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T00:27:29.545Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T00:27:29.546Z"}
+{"level":"info","message":"🔌 Client connected: 8y8n5Ze3jvPMJxOdAAAB","timestamp":"2025-09-07T00:27:33.254Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client 8y8n5Ze3jvPMJxOdAAAB:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T00:27:35.996Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client 8y8n5Ze3jvPMJxOdAAAB","timestamp":"2025-09-07T00:27:35.997Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T00:27:35.997Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=94203f92-520b-42dd-93a2-b79967d7d14f, mode=efficiency","timestamp":"2025-09-07T00:27:35.998Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T00:27:35.999Z"}
+{"level":"info","message":"🔧 Initializing session 94203f92-520b-42dd-93a2-b79967d7d14f in efficiency mode","timestamp":"2025-09-07T00:27:36.000Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T00:27:36.001Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T00:27:36.001Z"}
+{"level":"info","message":"🧠 Initializing Synthflow service...","timestamp":"2025-09-07T00:27:36.002Z"}
+{"level":"info","message":"✅ Real Synthflow service initialized","timestamp":"2025-09-07T00:27:36.003Z"}
+{"level":"info","message":"ℹ️ Anam service will be initialized on frontend","timestamp":"2025-09-07T00:27:36.004Z"}
+{"level":"info","message":"Session 94203f92-520b-42dd-93a2-b79967d7d14f initialized successfully","timestamp":"2025-09-07T00:27:40.137Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T00:27:40.138Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T00:27:40.162Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T00:27:41.251Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: moonshot","timestamp":"2025-09-07T00:28:04.269Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Moonshot Incubator","timestamp":"2025-09-07T00:28:05.011Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: customer","timestamp":"2025-09-07T00:28:06.289Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Customer Oracle","timestamp":"2025-09-07T00:28:06.754Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: investor","timestamp":"2025-09-07T00:28:07.736Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Investor Mindset","timestamp":"2025-09-07T00:28:08.778Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: customer","timestamp":"2025-09-07T00:28:10.606Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Customer Oracle","timestamp":"2025-09-07T00:28:11.176Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: moonshot","timestamp":"2025-09-07T00:28:12.763Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Moonshot Incubator","timestamp":"2025-09-07T00:28:13.256Z"}
+{"level":"info","message":"Ending session 94203f92-520b-42dd-93a2-b79967d7d14f","timestamp":"2025-09-07T00:28:18.749Z"}
+{"level":"info","message":"Cleaning up session 94203f92-520b-42dd-93a2-b79967d7d14f","timestamp":"2025-09-07T00:28:18.750Z"}
+{"challengesIssued":0,"duration":1,"finalPhase":"provocation","level":"info","message":"Session 94203f92-520b-42dd-93a2-b79967d7d14f completed:","mode":"efficiency","timestamp":"2025-09-07T00:28:18.750Z","totalExchanges":0}
+{"level":"info","message":"🔌 Client connected: u7RIFu2YOer1BeuDAAAD","timestamp":"2025-09-07T00:32:07.686Z"}
+{"level":"info","message":"🔌 Client disconnected: 8y8n5Ze3jvPMJxOdAAAB","timestamp":"2025-09-07T00:32:08.448Z"}
+{"level":"info","message":"🔌 Client disconnected: u7RIFu2YOer1BeuDAAAD","timestamp":"2025-09-07T00:32:11.504Z"}

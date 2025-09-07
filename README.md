@@ -32,7 +32,7 @@ Instead of another AI assistant that agrees with you, **Unhinged Colleague** is 
 
 ### Three-Platform Integration
 ```
-Voice Input → Anam.ai Avatar → Synthflow Brain → ElevenLabs Voice → Strategy Output
+Voice Input → Anam.ai Avatar → OpenAI Brain → ElevenLabs Voice → Strategy Output
 ```
 
 #### 🎭 **Anam.ai** - The Executive Presence
@@ -40,10 +40,11 @@ Voice Input → Anam.ai Avatar → Synthflow Brain → ElevenLabs Voice → Stra
 - Real-time facial expressions for challenging moments
 - 25fps video with perfect lip sync
 
-#### 🧠 **Synthflow** - The Enterprise Brain  
-- Conversation orchestration and memory
-- Mode-specific agent configurations
-- Enterprise integrations (Slack, Teams, Calendar)
+#### 🧠 **OpenAI** - The Strategic Brain  
+- Direct conversation processing with GPT-4
+- Persona-specific system prompts for targeted challenging
+- Real-time response generation with context awareness
+- Cost-effective token-based pricing model
 
 #### 🗣️ **ElevenLabs** - The Challenger's Voice
 - High-quality voice generation with emotional modulation
