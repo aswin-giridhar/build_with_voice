@@ -1,8 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { ElevenLabsService } from './ElevenLabsService.js';
-import { SynthflowService } from './SynthflowService.js';
+import { OpenAIChallengerService } from './OpenAIChallengerService.js';
 import { MockElevenLabsService } from './MockElevenLabsService.js';
-import { MockSynthflowService } from './MockSynthflowService.js';
 import { ChallengerPersona } from '../persona/ChallengerPersona.js';
 import { OutputGenerator } from '../utils/OutputGenerator.js';
 
@@ -25,7 +24,7 @@ export class UnhingedColleagueSession {
     
     // Service instances
     this.elevenLabsService = null;
-    this.synthflowService = null;
+    this.openaiService = null;
     this.anamService = null;
     this.challengerPersona = null;
     this.outputGenerator = null;
@@ -51,17 +50,16 @@ export class UnhingedColleagueSession {
       }
       
       try {
-        this.logger.info('🧠 Initializing Synthflow service...');
-        if (process.env.SYNTHFLOW_API_KEY && process.env.SYNTHFLOW_API_KEY !== 'your_synthflow_key') {
-          this.synthflowService = new SynthflowService(this.mode);
-          this.logger.info('✅ Real Synthflow service initialized');
+        this.logger.info('🧠 Initializing OpenAI service...');
+        if (process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== 'your_openai_key') {
+          this.openaiService = new OpenAIChallengerService(this.mode);
+          this.logger.info('✅ Real OpenAI service initialized');
         } else {
-          this.synthflowService = new MockSynthflowService(this.mode);
-          this.logger.info('✅ Mock Synthflow service initialized (no API key)');
+          throw new Error('OpenAI API key not configured');
         }
       } catch (error) {
-        this.logger.warn('⚠️ Real Synthflow failed, using mock:', error.message);
-        this.synthflowService = new MockSynthflowService(this.mode);
+        this.logger.error('❌ OpenAI service failed to initialize:', error.message);
+        throw new Error(`OpenAI service is required but failed to initialize: ${error.message}`);
       }
       
       // Skip Anam service initialization - it will be handled on the frontend
@@ -77,8 +75,8 @@ export class UnhingedColleagueSession {
       // Initialize output generator
       this.outputGenerator = new OutputGenerator(this.mode);
       
-      // Set up Synthflow service only
-      await this.synthflowService.initializeAgent({
+      // Set up OpenAI service
+      await this.openaiService.initializeAgent({
         sessionId: this.sessionId,
         userContext: this.userContext,
         companyData: this.companyData,
@@ -114,53 +112,47 @@ export class UnhingedColleagueSession {
         phase: this.currentPhase
       });
       
-      // Process through Synthflow for context and memory
-      const synthflowResponse = await this.synthflowService.processInput(
+      // Process through OpenAI for intelligent challenging
+      const openaiResponse = await this.openaiService.processInput(
         textInput,
-        this.conversationHistory,
-        this.currentPhase
-      );
-      
-      // Apply challenger persona logic
-      const challengerResponse = await this.challengerPersona.generateChallenge(
-        textInput,
-        synthflowResponse,
         this.conversationHistory,
         this.currentPhase
       );
       
       // Update conversation phase if needed
-      this.updateConversationPhase(challengerResponse);
+      this.updateConversationPhase(openaiResponse);
       
       // Add challenger response to history
       this.conversationHistory.push({
         timestamp: new Date(),
         speaker: 'challenger',
-        content: challengerResponse.text,
+        content: openaiResponse.response,
         phase: this.currentPhase,
-        challengeType: challengerResponse.challengeType
+        challengeType: 'openai_challenge'
       });
       
       // Generate voice response with ElevenLabs
       const audioStream = await this.elevenLabsService.generateSpeech(
-        challengerResponse.text,
-        challengerResponse.emotion || 'challenging'
+        openaiResponse.response,
+        'challenging'
       );
       
       // Deliver through Anam.ai avatar
       await this.anamService.deliverResponse(
         audioStream,
-        challengerResponse.emotion || 'challenging',
-        challengerResponse.facialExpression
+        'challenging',
+        'focused'
       );
       
       // Send response to client
       this.socket.emit('challenger-response', {
-        text: challengerResponse.text,
-        challengeType: challengerResponse.challengeType,
+        text: openaiResponse.response,
+        challengeType: 'openai_challenge',
         phase: this.currentPhase,
         audioStream: audioStream,
-        sessionStats: this.getSessionStats()
+        sessionStats: this.getSessionStats(),
+        suggestions: openaiResponse.suggestions || [],
+        context: openaiResponse.context || {}
       });
       
       this.challengeCount++;
@@ -286,8 +278,8 @@ export class UnhingedColleagueSession {
         await this.anamService.cleanup();
       }
       
-      if (this.synthflowService) {
-        await this.synthflowService.cleanup();
+      if (this.openaiService) {
+        await this.openaiService.cleanup();
       }
       
       // Log session completion
