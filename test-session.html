@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Session Start</title>
+</head>
+<body>
+    <h1>Test Session Start</h1>
+    <button id="testBtn">Test Start Session</button>
+    <div id="result"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const result = document.getElementById('result');
+        
+        socket.on('connect', () => {
+            result.innerHTML += '<p>✅ Connected to server</p>';
+        });
+        
+        socket.on('session-ready', (data) => {
+            result.innerHTML += '<p>✅ Session ready: ' + JSON.stringify(data) + '</p>';
+        });
+        
+        socket.on('error', (data) => {
+            result.innerHTML += '<p>❌ Error: ' + JSON.stringify(data) + '</p>';
+        });
+        
+        document.getElementById('testBtn').addEventListener('click', () => {
+            result.innerHTML += '<p>🚀 Starting session...</p>';
+            socket.emit('start-session', {
+                mode: 'strategy',
+                userContext: { name: 'Test User' },
+                companyData: { name: 'Test Company' }
+            });
+        });
+    </script>
+</body>
+</html>

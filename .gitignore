@@ -1,0 +1,14 @@
+.env.example
+.env
+CLAUDE.md
+SETUP_COMPLETE.md
+Support_anam_ai.md
+Support_synthflow.md
+Support_elevenlabs.md
+conversation_flows.md
+integration_strategy.md
+persona_specification.md
+
+
+node_modules
+.claude

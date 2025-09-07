@@ -1,0 +1,53 @@
+{
+  "name": "unhinged-colleague",
+  "version": "1.0.0",
+  "description": "Enterprise AI strategic challenger - your unhinged colleague for high-performance thinking",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "dev:3000": "set PORT=3000 && nodemon src/app.js",
+    "dev:8080": "set PORT=8080 && nodemon src/app.js",
+    "dev:5000": "set PORT=5000 && nodemon src/app.js",
+    "dev:4000": "set PORT=4000 && nodemon src/app.js",
+    "test": "jest",
+    "test-apis": "node test-apis.js",
+    "build": "webpack --mode production",
+    "demo": "node src/demo.js"
+  },
+  "keywords": [
+    "ai",
+    "voice",
+    "strategy",
+    "enterprise",
+    "challenger",
+    "synthflow",
+    "elevenlabs",
+    "anam"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@anam-ai/js-sdk": "^3.4.1",
+    "@elevenlabs/elevenlabs-js": "^2.14.0",
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.20.1",
+    "rate-limiter-flexible": "^7.3.0",
+    "socket.io": "^4.7.4",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
