@@ -14,6 +14,7 @@
     "test": "jest",
     "test-apis": "node test-apis.js",
     "build": "webpack --mode production",
+    "build:anam-sdk": "node build-anam-sdk.js",
     "demo": "node src/demo.js"
   },
   "keywords": [

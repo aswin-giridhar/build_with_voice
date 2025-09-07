@@ -36,12 +36,13 @@ Voice Input → Anam.ai Avatar → OpenAI Brain → ElevenLabs Voice → Strateg
 ```
 
 #### 🎭 **Anam.ai** - The Executive Presence
-- Professional avatar with sub-1-second latency
+- Professional avatar with sub-1-second latency using modern session token API
 - Real-time facial expressions for challenging moments
-- 25fps video with perfect lip sync
+- 25fps video with perfect lip sync via SDK integration
+- Modern `/auth/session-token` endpoint with `avatarId`, `voiceId`, `llmId` configuration
 
 #### 🧠 **OpenAI** - The Strategic Brain  
-- Direct conversation processing with GPT-4
+- Direct conversation processing with GPT-4 (replaced Synthflow for better reliability)
 - Persona-specific system prompts for targeted challenging
 - Real-time response generation with context awareness
 - Cost-effective token-based pricing model

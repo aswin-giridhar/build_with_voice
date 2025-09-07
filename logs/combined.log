@@ -1131,3 +1131,308 @@
 {"level":"info","message":"🔌 Client connected: ovAbiIHUkt-bf9ogAAAB","timestamp":"2025-09-07T01:08:35.203Z"}
 {"level":"info","message":"🔌 Client disconnected: ovAbiIHUkt-bf9ogAAAB","timestamp":"2025-09-07T01:08:46.920Z"}
 {"level":"info","message":"🔌 Client connected: qSijvdRV0QGRsJI-AAAD","timestamp":"2025-09-07T01:08:47.532Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T01:15:49.793Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T01:15:49.800Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T01:15:49.800Z"}
+{"level":"info","message":"🔌 Client connected: nA_AZgZfGZlR--cEAAAB","timestamp":"2025-09-07T01:15:51.204Z"}
+{"level":"info","message":"🔌 Client connected: 1IsOhM1EYuBX1wfBAAAD","timestamp":"2025-09-07T01:15:53.269Z"}
+{"level":"info","message":"🔌 Client disconnected: nA_AZgZfGZlR--cEAAAB","timestamp":"2025-09-07T01:15:55.198Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client 1IsOhM1EYuBX1wfBAAAD:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T01:16:13.661Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client 1IsOhM1EYuBX1wfBAAAD","timestamp":"2025-09-07T01:16:13.662Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T01:16:13.662Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=b1eecad3-6c9c-45c1-8598-c4593e76e81c, mode=efficiency","timestamp":"2025-09-07T01:16:13.663Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T01:16:13.664Z"}
+{"level":"info","message":"🔧 Initializing session b1eecad3-6c9c-45c1-8598-c4593e76e81c in efficiency mode","timestamp":"2025-09-07T01:16:13.664Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T01:16:13.664Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T01:16:13.665Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T01:16:13.665Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T01:16:13.667Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T01:16:13.668Z"}
+{"level":"warn","message":"⚠️ Real Anam failed, using fallback:","timestamp":"2025-09-07T01:16:14.560Z"}
+{"level":"info","message":"Session b1eecad3-6c9c-45c1-8598-c4593e76e81c initialized successfully","timestamp":"2025-09-07T01:16:14.562Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T01:16:14.562Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T01:16:14.588Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T01:16:15.227Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T01:21:55.048Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T01:21:55.056Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T01:21:55.056Z"}
+{"level":"info","message":"🔌 Client connected: nbp1W16--mWbrJzxAAAB","timestamp":"2025-09-07T01:21:57.231Z"}
+{"level":"info","message":"🔌 Client connected: Lx1HlPVMHsIFeIUrAAAD","timestamp":"2025-09-07T01:21:57.575Z"}
+{"level":"info","message":"🔌 Client disconnected: Lx1HlPVMHsIFeIUrAAAD","timestamp":"2025-09-07T01:21:58.879Z"}
+{"level":"info","message":"🔌 Client connected: -eFz-jAJzOJczqbuAAAF","timestamp":"2025-09-07T01:21:59.473Z"}
+{"level":"info","message":"🔌 Client disconnected: -eFz-jAJzOJczqbuAAAF","timestamp":"2025-09-07T01:22:00.251Z"}
+{"level":"info","message":"🔌 Client connected: jx6IX-K0OL2KT_tiAAAH","timestamp":"2025-09-07T01:22:01.632Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client jx6IX-K0OL2KT_tiAAAH:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T01:23:08.323Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client jx6IX-K0OL2KT_tiAAAH","timestamp":"2025-09-07T01:23:08.324Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T01:23:08.325Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=63435634-8ef3-4269-ad2c-ed2912968f37, mode=efficiency","timestamp":"2025-09-07T01:23:08.326Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T01:23:08.326Z"}
+{"level":"info","message":"🔧 Initializing session 63435634-8ef3-4269-ad2c-ed2912968f37 in efficiency mode","timestamp":"2025-09-07T01:23:08.327Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T01:23:08.327Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T01:23:08.328Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T01:23:08.328Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T01:23:08.330Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T01:23:08.331Z"}
+{"level":"warn","message":"⚠️ Real Anam failed, using fallback:","timestamp":"2025-09-07T01:23:09.415Z"}
+{"level":"info","message":"Session 63435634-8ef3-4269-ad2c-ed2912968f37 initialized successfully","timestamp":"2025-09-07T01:23:09.418Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T01:23:09.418Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T01:23:09.814Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T01:23:10.495Z"}
+{"level":"info","message":"🔌 Client disconnected: nbp1W16--mWbrJzxAAAB","timestamp":"2025-09-07T01:23:12.558Z"}
+{"level":"info","message":"Ending session 63435634-8ef3-4269-ad2c-ed2912968f37","timestamp":"2025-09-07T01:24:27.690Z"}
+{"level":"info","message":"Cleaning up session 63435634-8ef3-4269-ad2c-ed2912968f37","timestamp":"2025-09-07T01:24:27.691Z"}
+{"challengesIssued":0,"duration":1,"finalPhase":"provocation","level":"info","message":"Session 63435634-8ef3-4269-ad2c-ed2912968f37 completed:","mode":"efficiency","timestamp":"2025-09-07T01:24:27.692Z","totalExchanges":0}
+{"level":"info","message":"🔌 Client disconnected: jx6IX-K0OL2KT_tiAAAH","timestamp":"2025-09-07T01:26:24.193Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T01:52:43.177Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T01:52:43.185Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T01:52:43.185Z"}
+{"level":"info","message":"🔌 Client connected: VSaWPstto4S8j1gCAAAB","timestamp":"2025-09-07T01:52:45.630Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client VSaWPstto4S8j1gCAAAB:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T01:52:49.186Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client VSaWPstto4S8j1gCAAAB","timestamp":"2025-09-07T01:52:49.186Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T01:52:49.187Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=44084ee4-db40-4a46-8a48-7d494e4e5075, mode=efficiency","timestamp":"2025-09-07T01:52:49.187Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T01:52:49.188Z"}
+{"level":"info","message":"🔧 Initializing session 44084ee4-db40-4a46-8a48-7d494e4e5075 in efficiency mode","timestamp":"2025-09-07T01:52:49.189Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T01:52:49.189Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T01:52:49.191Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T01:52:49.191Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T01:52:49.194Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T01:52:49.194Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T01:52:50.133Z"}
+{"level":"info","message":"Session 44084ee4-db40-4a46-8a48-7d494e4e5075 initialized successfully","timestamp":"2025-09-07T01:52:50.135Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T01:52:50.135Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T01:52:50.278Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T01:52:50.923Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T02:03:06.342Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T02:03:06.350Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T02:03:06.350Z"}
+{"level":"info","message":"🔌 Client connected: 8YeiUrErzfN0qUwDAAAB","timestamp":"2025-09-07T02:03:06.556Z"}
+{"level":"info","message":"🔌 Client connected: 3y32FmbMwiYJW0_XAAAD","timestamp":"2025-09-07T02:03:09.549Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client 3y32FmbMwiYJW0_XAAAD:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T02:03:11.214Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client 3y32FmbMwiYJW0_XAAAD","timestamp":"2025-09-07T02:03:11.215Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T02:03:11.216Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=bd1f38e4-f25b-4726-a58b-5178d7e4a987, mode=efficiency","timestamp":"2025-09-07T02:03:11.217Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T02:03:11.219Z"}
+{"level":"info","message":"🔧 Initializing session bd1f38e4-f25b-4726-a58b-5178d7e4a987 in efficiency mode","timestamp":"2025-09-07T02:03:11.220Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T02:03:11.220Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T02:03:11.222Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T02:03:11.222Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T02:03:11.225Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T02:03:11.225Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T02:03:12.099Z"}
+{"level":"info","message":"Session bd1f38e4-f25b-4726-a58b-5178d7e4a987 initialized successfully","timestamp":"2025-09-07T02:03:12.101Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T02:03:12.102Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T02:03:12.312Z"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T02:03:12.974Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T02:08:31.896Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T02:08:31.907Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T02:08:31.908Z"}
+{"level":"info","message":"🔌 Client connected: Jd7R8bXOxGUBUGI4AAAC","timestamp":"2025-09-07T02:08:32.042Z"}
+{"level":"info","message":"🔌 Client connected: qOERns1IceDOXNJ_AAAD","timestamp":"2025-09-07T02:08:32.048Z"}
+{"level":"info","message":"🔌 Client connected: MGPPW5Q-BNQOCZbMAAAF","timestamp":"2025-09-07T02:08:36.414Z"}
+{"level":"info","message":"🔌 Client disconnected: qOERns1IceDOXNJ_AAAD","timestamp":"2025-09-07T02:08:37.993Z"}
+{"level":"info","message":"🔌 Client disconnected: Jd7R8bXOxGUBUGI4AAAC","timestamp":"2025-09-07T02:08:38.485Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client MGPPW5Q-BNQOCZbMAAAF:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T02:08:41.380Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client MGPPW5Q-BNQOCZbMAAAF","timestamp":"2025-09-07T02:08:41.380Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T02:08:41.381Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=6a4f2016-67ae-475c-ad65-756e27e3780b, mode=efficiency","timestamp":"2025-09-07T02:08:41.381Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T02:08:41.382Z"}
+{"level":"info","message":"🔧 Initializing session 6a4f2016-67ae-475c-ad65-756e27e3780b in efficiency mode","timestamp":"2025-09-07T02:08:41.382Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T02:08:41.382Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T02:08:41.383Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T02:08:41.383Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T02:08:41.385Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T02:08:41.386Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T02:08:42.607Z"}
+{"level":"info","message":"Session 6a4f2016-67ae-475c-ad65-756e27e3780b initialized successfully","timestamp":"2025-09-07T02:08:42.608Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T02:08:42.609Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T02:08:42.627Z"}
+{"avatarId":"3d4f6f63-157c-4469-b9bf-79534934cd71","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T02:08:42.628Z","voiceId":"6bfbe25a-979d-40f3-a92b-5394170af54b"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T02:08:43.191Z"}
+{"level":"info","message":"Ending session 6a4f2016-67ae-475c-ad65-756e27e3780b","timestamp":"2025-09-07T02:08:54.181Z"}
+{"level":"info","message":"Cleaning up session 6a4f2016-67ae-475c-ad65-756e27e3780b","timestamp":"2025-09-07T02:08:54.181Z"}
+{"challengesIssued":0,"duration":0,"finalPhase":"provocation","level":"info","message":"Session 6a4f2016-67ae-475c-ad65-756e27e3780b completed:","mode":"efficiency","timestamp":"2025-09-07T02:08:54.183Z","totalExchanges":0}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T02:11:13.216Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T02:11:13.223Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T02:11:13.224Z"}
+{"level":"info","message":"🔌 Client connected: JhhpB6VquaW94HOEAAAB","timestamp":"2025-09-07T02:11:13.298Z"}
+{"level":"info","message":"🔌 Client connected: DvCVw3PYbW4AjJ7RAAAD","timestamp":"2025-09-07T02:11:22.721Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client DvCVw3PYbW4AjJ7RAAAD:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T02:11:26.790Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client DvCVw3PYbW4AjJ7RAAAD","timestamp":"2025-09-07T02:11:26.791Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T02:11:26.791Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=a2485d5a-a5c1-46b9-9c45-8189743289eb, mode=efficiency","timestamp":"2025-09-07T02:11:26.793Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T02:11:26.794Z"}
+{"level":"info","message":"🔧 Initializing session a2485d5a-a5c1-46b9-9c45-8189743289eb in efficiency mode","timestamp":"2025-09-07T02:11:26.795Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T02:11:26.795Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T02:11:26.797Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T02:11:26.797Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T02:11:26.800Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T02:11:26.801Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T02:11:27.779Z"}
+{"level":"info","message":"Session a2485d5a-a5c1-46b9-9c45-8189743289eb initialized successfully","timestamp":"2025-09-07T02:11:27.780Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T02:11:27.781Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T02:11:27.802Z"}
+{"avatarId":"3d4f6f63-157c-4469-b9bf-79534934cd71","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T02:11:27.803Z","voiceId":"6bfbe25a-979d-40f3-a92b-5394170af54b"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T02:11:28.363Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T02:28:28.090Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T02:28:28.098Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T02:28:28.099Z"}
+{"level":"info","message":"🔌 Client connected: HpXHsUIblAcrPbP8AAAB","timestamp":"2025-09-07T02:29:28.352Z"}
+{"level":"info","message":"🔌 Client disconnected: HpXHsUIblAcrPbP8AAAB","timestamp":"2025-09-07T02:30:11.234Z"}
+{"level":"info","message":"🔌 Client connected: IjYkwqI9mbPdgpEEAAAD","timestamp":"2025-09-07T02:30:26.794Z"}
+{"level":"info","message":"🔌 Client disconnected: IjYkwqI9mbPdgpEEAAAD","timestamp":"2025-09-07T02:31:01.321Z"}
+{"level":"info","message":"🔌 Client connected: rnIv-9JPPkG-VLiSAAAF","timestamp":"2025-09-07T02:31:12.336Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client rnIv-9JPPkG-VLiSAAAF:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T02:31:14.340Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client rnIv-9JPPkG-VLiSAAAF","timestamp":"2025-09-07T02:31:14.341Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T02:31:14.342Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=6edd5eb2-8298-4edb-b24f-23a8f43a929c, mode=efficiency","timestamp":"2025-09-07T02:31:14.343Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T02:31:14.344Z"}
+{"level":"info","message":"🔧 Initializing session 6edd5eb2-8298-4edb-b24f-23a8f43a929c in efficiency mode","timestamp":"2025-09-07T02:31:14.345Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T02:31:14.345Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T02:31:14.347Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T02:31:14.347Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T02:31:14.352Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T02:31:14.352Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T02:31:15.265Z"}
+{"level":"info","message":"Session 6edd5eb2-8298-4edb-b24f-23a8f43a929c initialized successfully","timestamp":"2025-09-07T02:31:15.267Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T02:31:15.268Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T02:31:15.299Z"}
+{"avatarId":"3d4f6f63-157c-4469-b9bf-79534934cd71","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T02:31:15.300Z","voiceId":"6bfbe25a-979d-40f3-a92b-5394170af54b"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T02:31:15.886Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T02:39:54.385Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T02:39:54.393Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T02:39:54.393Z"}
+{"level":"info","message":"🔌 Client connected: gMOZ34oxsP0S4QFjAAAB","timestamp":"2025-09-07T02:39:54.534Z"}
+{"level":"info","message":"🔌 Client connected: UkbhGsql-uDkUPJDAAAD","timestamp":"2025-09-07T02:39:56.484Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client UkbhGsql-uDkUPJDAAAD:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T02:39:58.003Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client UkbhGsql-uDkUPJDAAAD","timestamp":"2025-09-07T02:39:58.004Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T02:39:58.004Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=62528b17-f556-4fb6-b0ec-badab1b785f6, mode=efficiency","timestamp":"2025-09-07T02:39:58.006Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T02:39:58.007Z"}
+{"level":"info","message":"🔧 Initializing session 62528b17-f556-4fb6-b0ec-badab1b785f6 in efficiency mode","timestamp":"2025-09-07T02:39:58.008Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T02:39:58.009Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T02:39:58.011Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T02:39:58.011Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T02:39:58.015Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T02:39:58.015Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T02:39:58.888Z"}
+{"level":"info","message":"Session 62528b17-f556-4fb6-b0ec-badab1b785f6 initialized successfully","timestamp":"2025-09-07T02:39:58.890Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T02:39:58.891Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T02:39:58.943Z"}
+{"avatarId":"3d4f6f63-157c-4469-b9bf-79534934cd71","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T02:39:58.944Z","voiceId":"6bfbe25a-979d-40f3-a92b-5394170af54b"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T02:39:59.511Z"}
+{"level":"info","message":"🔌 Client disconnected: UkbhGsql-uDkUPJDAAAD","timestamp":"2025-09-07T02:42:17.025Z"}
+{"level":"info","message":"🧹 Cleaning up session for disconnected client UkbhGsql-uDkUPJDAAAD","timestamp":"2025-09-07T02:42:17.025Z"}
+{"level":"info","message":"Cleaning up session 62528b17-f556-4fb6-b0ec-badab1b785f6","timestamp":"2025-09-07T02:42:17.026Z"}
+{"challengesIssued":0,"duration":2,"finalPhase":"provocation","level":"info","message":"Session 62528b17-f556-4fb6-b0ec-badab1b785f6 completed:","mode":"efficiency","timestamp":"2025-09-07T02:42:17.029Z","totalExchanges":0}
+{"level":"info","message":"🔌 Client disconnected: gMOZ34oxsP0S4QFjAAAB","timestamp":"2025-09-07T02:42:18.591Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T02:52:47.858Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T02:52:47.865Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T02:52:47.866Z"}
+{"level":"info","message":"🔌 Client connected: Mpjv3VoAXjHq8DyhAAAB","timestamp":"2025-09-07T02:52:57.074Z"}
+{"level":"info","message":"🔌 Client disconnected: Mpjv3VoAXjHq8DyhAAAB","timestamp":"2025-09-07T02:53:31.642Z"}
+{"level":"info","message":"🔌 Client connected: QhPYdDygIqJ71jvDAAAD","timestamp":"2025-09-07T02:54:03.086Z"}
+{"level":"info","message":"🔌 Client disconnected: QhPYdDygIqJ71jvDAAAD","timestamp":"2025-09-07T02:54:38.340Z"}
+{"level":"info","message":"🔌 Client connected: 2irvkDTEkzydU5xpAAAF","timestamp":"2025-09-07T02:55:01.755Z"}
+{"level":"info","message":"🔌 Client disconnected: 2irvkDTEkzydU5xpAAAF","timestamp":"2025-09-07T02:55:46.955Z"}
+{"level":"info","message":"🔌 Client connected: ikUiCBERAJw4vXqlAAAH","timestamp":"2025-09-07T02:55:59.739Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client ikUiCBERAJw4vXqlAAAH:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T02:56:01.830Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client ikUiCBERAJw4vXqlAAAH","timestamp":"2025-09-07T02:56:01.831Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T02:56:01.831Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=58993308-a4db-492e-b58d-cda1a32010a8, mode=efficiency","timestamp":"2025-09-07T02:56:01.833Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T02:56:01.833Z"}
+{"level":"info","message":"🔧 Initializing session 58993308-a4db-492e-b58d-cda1a32010a8 in efficiency mode","timestamp":"2025-09-07T02:56:01.834Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T02:56:01.834Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T02:56:01.836Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T02:56:01.836Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T02:56:01.839Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T02:56:01.839Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T02:56:02.745Z"}
+{"level":"info","message":"Session 58993308-a4db-492e-b58d-cda1a32010a8 initialized successfully","timestamp":"2025-09-07T02:56:02.747Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T02:56:02.747Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T02:56:02.765Z"}
+{"avatarId":"3d4f6f63-157c-4469-b9bf-79534934cd71","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T02:56:02.766Z","voiceId":"6bfbe25a-979d-40f3-a92b-5394170af54b"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T02:56:03.319Z"}
+{"level":"info","message":"Ending session 58993308-a4db-492e-b58d-cda1a32010a8","timestamp":"2025-09-07T02:56:56.786Z"}
+{"level":"info","message":"Cleaning up session 58993308-a4db-492e-b58d-cda1a32010a8","timestamp":"2025-09-07T02:56:56.787Z"}
+{"challengesIssued":0,"duration":1,"finalPhase":"provocation","level":"info","message":"Session 58993308-a4db-492e-b58d-cda1a32010a8 completed:","mode":"efficiency","timestamp":"2025-09-07T02:56:56.789Z","totalExchanges":0}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T02:59:08.890Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T02:59:08.898Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T02:59:08.898Z"}
+{"level":"info","message":"🔌 Client connected: O_ow9mYL1d5SpFqrAAAB","timestamp":"2025-09-07T02:59:09.245Z"}
+{"level":"info","message":"🔌 Client connected: du3E5nG2sWNU7KPzAAAD","timestamp":"2025-09-07T02:59:12.385Z"}
+{"level":"info","message":"🔌 Client connected: HyM2qO3NlwDDJ1BnAAAF","timestamp":"2025-09-07T02:59:13.208Z"}
+{"level":"info","message":"🔌 Client disconnected: HyM2qO3NlwDDJ1BnAAAF","timestamp":"2025-09-07T02:59:13.759Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client du3E5nG2sWNU7KPzAAAD:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T02:59:15.952Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client du3E5nG2sWNU7KPzAAAD","timestamp":"2025-09-07T02:59:15.954Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T02:59:15.955Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=07c8b3b7-475f-40b6-bb08-074b5f27bb60, mode=efficiency","timestamp":"2025-09-07T02:59:15.957Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T02:59:15.958Z"}
+{"level":"info","message":"🔧 Initializing session 07c8b3b7-475f-40b6-bb08-074b5f27bb60 in efficiency mode","timestamp":"2025-09-07T02:59:15.959Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T02:59:15.960Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T02:59:15.961Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T02:59:15.961Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T02:59:15.964Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T02:59:15.965Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T02:59:17.016Z"}
+{"level":"info","message":"Session 07c8b3b7-475f-40b6-bb08-074b5f27bb60 initialized successfully","timestamp":"2025-09-07T02:59:17.024Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T02:59:17.024Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T02:59:17.081Z"}
+{"avatarId":"3d4f6f63-157c-4469-b9bf-79534934cd71","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T02:59:17.085Z","voiceId":"6bfbe25a-979d-40f3-a92b-5394170af54b"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T02:59:17.691Z"}
+{"level":"info","message":"🔌 Client disconnected: O_ow9mYL1d5SpFqrAAAB","timestamp":"2025-09-07T02:59:23.949Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T03:11:45.201Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T03:11:45.207Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T03:11:45.208Z"}
+{"level":"info","message":"🔌 Client connected: cIoOtp9DMhv3zgk2AAAB","timestamp":"2025-09-07T03:11:45.261Z"}
+{"level":"info","message":"🔌 Client connected: agQPkkw1X5vFZI-cAAAD","timestamp":"2025-09-07T03:11:48.826Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client agQPkkw1X5vFZI-cAAAD:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T03:11:51.214Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client agQPkkw1X5vFZI-cAAAD","timestamp":"2025-09-07T03:11:51.215Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T03:11:51.215Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=e42d9980-458e-4291-86b6-cc064016d3e7, mode=efficiency","timestamp":"2025-09-07T03:11:51.217Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T03:11:51.218Z"}
+{"level":"info","message":"🔧 Initializing session e42d9980-458e-4291-86b6-cc064016d3e7 in efficiency mode","timestamp":"2025-09-07T03:11:51.218Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T03:11:51.219Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T03:11:51.220Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T03:11:51.221Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T03:11:51.225Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T03:11:51.225Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T03:11:52.193Z"}
+{"level":"info","message":"Session e42d9980-458e-4291-86b6-cc064016d3e7 initialized successfully","timestamp":"2025-09-07T03:11:52.194Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T03:11:52.195Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T03:11:52.222Z"}
+{"avatarId":"3d4f6f63-157c-4469-b9bf-79534934cd71","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T03:11:52.223Z","voiceId":"6bfbe25a-979d-40f3-a92b-5394170af54b"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T03:11:52.829Z"}
+{"level":"info","message":"🔌 Client connected: wZKLRmQ1hXMqMNWzAAAF","timestamp":"2025-09-07T03:11:54.987Z"}
+{"level":"info","message":"🔌 Client disconnected: wZKLRmQ1hXMqMNWzAAAF","timestamp":"2025-09-07T03:12:07.496Z"}
+{"level":"info","message":"🔌 Client connected: zVsEcypGQq7F-EJzAAAH","timestamp":"2025-09-07T03:12:42.872Z"}
+{"level":"info","message":"Ending session e42d9980-458e-4291-86b6-cc064016d3e7","timestamp":"2025-09-07T03:12:50.779Z"}
+{"level":"info","message":"Cleaning up session e42d9980-458e-4291-86b6-cc064016d3e7","timestamp":"2025-09-07T03:12:50.784Z"}
+{"challengesIssued":0,"duration":1,"finalPhase":"provocation","level":"info","message":"Session e42d9980-458e-4291-86b6-cc064016d3e7 completed:","mode":"efficiency","timestamp":"2025-09-07T03:12:50.789Z","totalExchanges":0}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client agQPkkw1X5vFZI-cAAAD:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T03:12:52.915Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client agQPkkw1X5vFZI-cAAAD","timestamp":"2025-09-07T03:12:52.915Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T03:12:52.916Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=5713fe77-e825-48f7-8320-f79e2c6aa542, mode=efficiency","timestamp":"2025-09-07T03:12:52.916Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T03:12:52.916Z"}
+{"level":"info","message":"🔧 Initializing session 5713fe77-e825-48f7-8320-f79e2c6aa542 in efficiency mode","timestamp":"2025-09-07T03:12:52.917Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T03:12:52.917Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T03:12:52.918Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T03:12:52.918Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T03:12:52.919Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T03:12:52.919Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T03:12:54.595Z"}
+{"level":"info","message":"Session 5713fe77-e825-48f7-8320-f79e2c6aa542 initialized successfully","timestamp":"2025-09-07T03:12:54.597Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T03:12:54.597Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T03:12:54.607Z"}
+{"avatarId":"3d4f6f63-157c-4469-b9bf-79534934cd71","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T03:12:54.608Z","voiceId":"6bfbe25a-979d-40f3-a92b-5394170af54b"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T03:12:55.149Z"}
+{"level":"info","message":"🔌 Client disconnected: zVsEcypGQq7F-EJzAAAH","timestamp":"2025-09-07T03:12:57.028Z"}
+{"level":"info","message":"🔌 Client connected: TmtC-z8saDvtd7HQAAAJ","timestamp":"2025-09-07T03:13:44.963Z"}
+{"level":"info","message":"🔌 Client disconnected: TmtC-z8saDvtd7HQAAAJ","timestamp":"2025-09-07T03:13:58.244Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T03:15:22.728Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T03:15:22.736Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T03:15:22.736Z"}
+{"level":"info","message":"🔌 Client connected: SLeYKMHMDPgcVoZ9AAAC","timestamp":"2025-09-07T03:15:25.254Z"}
+{"level":"info","message":"🔌 Client connected: WdFFNe_PKrNEDF1tAAAD","timestamp":"2025-09-07T03:15:25.262Z"}
+{"level":"info","message":"🔌 Client connected: FXWjD9EskCRAc0BFAAAF","timestamp":"2025-09-07T03:15:30.228Z"}
+{"level":"info","message":"🔌 Client disconnected: FXWjD9EskCRAc0BFAAAF","timestamp":"2025-09-07T03:15:46.808Z"}

@@ -98,9 +98,7 @@ app.get('/test', (req, res) => {
 const personaConfigurations = {
   efficiency: {
     name: "Efficiency Maximizer",
-    // avatarId: "481542ce-2746-4989-bd70-1c3e8ebd069e", // Elena - Original
-    // avatarId: "5047db99-a7fd-4356-a573-bdf2b88ca461", // Mary - Alternative
-    avatarId: "3d4f6f63-157c-4469-b9bf-79534934cd71", // Test ID
+    avatarId: process.env.ANAM_AVATAR_EFFICIENCY || "481542ce-2746-4989-bd70-1c3e8ebd069e",
     voiceId: "6bfbe25a-979d-40f3-a92b-5394170af54b",
     llmId: "0934d97d-0c3a-4f33-91b0-5e136a0ef466",
     systemPrompt: `[ROLE]
@@ -119,8 +117,7 @@ You are in a live strategy session. The user is brainstorming ideas and expects 
   },
   moonshot: {
     name: "Moonshot Incubator",
-    // avatarId: "e5fe7c2f-57cb-43e2-9e4c-e5c00d0c7185", // Stephanie - Original
-    avatarId: "70f7f686-6665-4e2b-8e80-049d0d70eb22", // Test ID
+    avatarId: process.env.ANAM_AVATAR_MOONSHOT || "e5fe7c2f-57cb-43e2-9e4c-e5c00d0c7185",
     voiceId: "6bfbe25a-979d-40f3-a92b-5394170af54b",
     llmId: "0934d97d-0c3a-4f33-91b0-5e136a0ef466",
     systemPrompt: `[ROLE]
@@ -138,9 +135,7 @@ You are in a live innovation brainstorm. The user is testing product, strategy, 
   },
   customer: {
     name: "Customer Oracle",
-    // avatarId: "d87de127-a4d9-451c-aa76-35c00831fb44", // Omari - Original
-    // avatarId: "dd2da2dd-4fde-4b0f-a08c-dfa682452781", // William - Alternative
-    avatarId: "8f55b051-aa5f-4656-913a-24232b166c52", // Test ID
+    avatarId: process.env.ANAM_AVATAR_CUSTOMER || "d87de127-a4d9-451c-aa76-35c00831fb44",
     voiceId: "6bfbe25a-979d-40f3-a92b-5394170af54b",
     llmId: "0934d97d-0c3a-4f33-91b0-5e136a0ef466",
     systemPrompt: `[ROLE]
@@ -162,8 +157,7 @@ You are in a live brainstorm where strategies are discussed. Your role is to sha
   },
   investor: {
     name: "Investor Mindset",
-    // avatarId: "4b622e32-93c7-4b88-b93a-8b0df888eeb3", // Robert - Original
-    avatarId: "20c53fa6-963b-41b5-9713-36e41f5a77f8", // Test ID
+    avatarId: process.env.ANAM_AVATAR_INVESTOR || "4b622e32-93c7-4b88-b93a-8b0df888eeb3",
     voiceId: "6bfbe25a-979d-40f3-a92b-5394170af54b",
     llmId: "0934d97d-0c3a-4f33-91b0-5e136a0ef466",
     systemPrompt: `[ROLE]
@@ -196,17 +190,35 @@ app.post('/api/anam/session-token', async (req, res) => {
       return res.status(400).json({ error: `Invalid persona: ${persona}` });
     }
     
+    // Use the correct Anam API format with personaConfig wrapper
+    const anamPayload = {
+      personaConfig: {
+        avatarId: personaConfig.avatarId,
+        voiceId: personaConfig.voiceId,
+        llmId: personaConfig.llmId,
+        systemPrompt: personaConfig.systemPrompt
+      }
+    };
+    
+    logger.info(`🔍 Anam API payload:`, { 
+      avatarId: personaConfig.avatarId, 
+      voiceId: personaConfig.voiceId,
+      llmId: personaConfig.llmId 
+    });
+    
     const response = await fetch('https://api.anam.ai/v1/auth/session-token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.ANAM_API_KEY}`
       },
-      body: JSON.stringify({ personaConfig })
+      body: JSON.stringify(anamPayload)
     });
     
     if (!response.ok) {
-      throw new Error(`Anam API error: ${response.status}`);
+      const errorText = await response.text();
+      logger.error(`❌ Anam API error ${response.status}:`, errorText);
+      throw new Error(`Anam API error: ${response.status} - ${errorText}`);
     }
     
     const data = await response.json();

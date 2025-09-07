@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { ElevenLabsService } from './ElevenLabsService.js';
 import { OpenAIChallengerService } from './OpenAIChallengerService.js';
+import { AnamService } from './AnamService.js';
 import { ChallengerPersona } from '../persona/ChallengerPersona.js';
 import { OutputGenerator } from '../utils/OutputGenerator.js';
 
@@ -80,12 +81,34 @@ export class UnhingedColleagueSession {
         throw new Error(`OpenAI service is required but failed to initialize: ${error.message}`);
       }
       
-      // Skip Anam service initialization - it will be handled on the frontend
-      this.logger.info('ℹ️ Anam service will be initialized on frontend');
-      this.anamService = {
-        deliverResponse: async () => ({ success: true }),
-        cleanup: async () => ({ success: true })
-      };
+      // Initialize Anam service
+      try {
+        this.logger.info('🎭 Initializing Anam service...');
+        if (process.env.ANAM_API_KEY && process.env.ANAM_API_KEY !== 'your_anam_key') {
+          this.anamService = new AnamService();
+          await this.anamService.initializeAvatar(this.mode);
+          this.logger.info('✅ Real Anam service initialized');
+        } else {
+          // Create simple fallback for Anam
+          this.anamService = {
+            deliverResponse: async (audioStream, emotion, expression) => {
+              this.logger.info('🎭 Anam fallback: avatar delivery simulated');
+              return { success: true, fallback: true };
+            },
+            cleanup: async () => ({ success: true })
+          };
+          this.logger.info('✅ Anam fallback service initialized (no API key)');
+        }
+      } catch (error) {
+        this.logger.warn('⚠️ Real Anam failed, using fallback:', error.message);
+        this.anamService = {
+          deliverResponse: async (audioStream, emotion, expression) => {
+            this.logger.info('🎭 Anam fallback: avatar delivery simulated');
+            return { success: true, fallback: true };
+          },
+          cleanup: async () => ({ success: true })
+        };
+      }
       
       // Initialize persona with mode-specific configuration
       this.challengerPersona = new ChallengerPersona(this.mode, this.logger);

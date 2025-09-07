@@ -436,8 +436,8 @@
             text-align: center;
             max-width: 650px;
             width: calc(100% - 20px);
-            height: fit-content;
-            max-height: calc(100vh - 20px);
+            height: auto;
+            max-height: 90vh;
             overflow-y: auto;
             border: 1px solid rgba(255,255,255,0.3);
             backdrop-filter: blur(20px);
@@ -478,15 +478,15 @@
         .mode-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 40px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .mode-card {
             background: rgba(255,255,255,0.03);
             border: 2px solid rgba(255,255,255,0.1);
             border-radius: 16px;
-            padding: 24px;
+            padding: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: left;
@@ -581,7 +581,7 @@
             background: linear-gradient(45deg, #667eea, #764ba2);
             border: none;
             color: white;
-            padding: 18px 48px;
+            padding: 24px 64px;
             border-radius: 50px;
             font-size: 1.2rem;
             font-weight: 700;
@@ -709,7 +709,7 @@
         <div class="mode-selection-panel">
             <h1 class="mode-selection-title">🎯 Unhinged Colleague</h1>
             <p class="mode-selection-subtitle">Choose your AI strategic challenger persona</p>
-            <div class="enterprise-tagline" style="font-size: 0.9rem; opacity: 0.7; margin-bottom: 30px; font-style: italic;">"The first mandatory AI sparring partner for companies"</div>
+            <div class="enterprise-tagline" style="font-size: 0.9rem; opacity: 0.7; margin-bottom: 15px; font-style: italic;">"The first mandatory AI sparring partner for companies"</div>
             
             <div class="mode-grid">
                 <div class="mode-card active" data-persona="efficiency" data-avatar-id="3d4f6f63-157c-4469-b9bf-79534934cd71">
@@ -744,7 +744,7 @@
                 </div>
             </div>
             
-            <div class="persona-preview" id="persona-preview" style="margin: 20px 0; padding: 16px; background: rgba(255,255,255,0.05); border-radius: 12px; border-left: 4px solid #667eea;">
+            <div class="persona-preview" id="persona-preview" style="margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px; border-left: 4px solid #667eea;">
                 <div class="preview-name" style="font-weight: 600; margin-bottom: 4px;">Efficiency Maximizer (Elena)</div>
                 <div class="preview-sample" style="font-style: italic; opacity: 0.9; font-size: 0.9rem;">"Look, that sounds like busywork. What revenue does this generate?"</div>
             </div>
@@ -833,20 +833,8 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <!-- Anam.ai SDK -->
-    <script type="module">
-        // Import and make Anam SDK globally available using their CDN
-        try {
-            const { createClient } = await import('https://esm.sh/@anam-ai/js-sdk@latest');
-            window.AnamSDK = { createClient };
-            console.log('🎭 Anam SDK loaded from esm.sh CDN');
-            
-            // Dispatch event to signal SDK is ready
-            window.dispatchEvent(new CustomEvent('anam-sdk-ready'));
-        } catch (error) {
-            console.error('❌ Failed to load Anam SDK:', error);
-            window.dispatchEvent(new CustomEvent('anam-sdk-error', { detail: error }));
-        }
-    </script>
+    <!-- Load Anam SDK from npm build -->
+    <script src="anam-sdk-bundle.js"></script>
     <script src="meet-style-app.js"></script>
 </body>
 </html>
