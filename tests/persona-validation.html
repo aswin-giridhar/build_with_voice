@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anam.ai Persona Visual Validation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .status-loading {
+            background: #f39c12;
+            color: white;
+        }
+
+        .status-ready {
+            background: #27ae60;
+            color: white;
+        }
+
+        .status-error {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .personas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .persona-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .persona-card.active {
+            border-color: #3498db;
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
+        }
+
+        .persona-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .persona-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .efficiency .persona-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .moonshot .persona-icon { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .customer .persona-icon { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .investor .persona-icon { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+
+        .persona-title {
+            flex: 1;
+        }
+
+        .persona-title h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .persona-title p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-element {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .video-placeholder {
+            color: #95a5a6;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-start {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-start:hover {
+            background: #229954;
+            transform: translateY(-2px);
+        }
+
+        .btn-stop {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-stop:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .persona-info {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            line-height: 1.4;
+        }
+
+        .persona-info strong {
+            color: #2c3e50;
+        }
+
+        .global-controls {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .global-controls .btn {
+            margin: 0 10px;
+            min-width: 150px;
+        }
+
+        .logs {
+            background: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            max-height: 300px;
+            overflow-y: auto;
+            line-height: 1.4;
+        }
+
+        .log-entry {
+            margin-bottom: 5px;
+        }
+
+        .log-success { color: #2ecc71; }
+        .log-error { color: #e74c3c; }
+        .log-warning { color: #f39c12; }
+        .log-info { color: #3498db; }
+
+        .instructions {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .instructions ul {
+            color: #5a6c7d;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .personas-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .global-controls .btn {
+                display: block;
+                margin: 10px auto;
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎭 Anam.ai Persona Visual Validation</h1>
+            <p>Test and validate all 4 challenger personas with live video streaming</p>
+            <div class="status-indicator status-loading" id="globalStatus">
+                🔄 Initializing...
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Instructions</h3>
+            <ul>
+                <li><strong>Start All:</strong> Generate session tokens and initialize all personas simultaneously</li>
+                <li><strong>Individual Controls:</strong> Start/stop specific personas for detailed testing</li>
+                <li><strong>Visual Validation:</strong> Verify each persona appears with the correct avatar</li>
+                <li><strong>Performance Check:</strong> Monitor streaming quality and responsiveness</li>
+                <li><strong>Logs:</strong> Review detailed technical information below</li>
+            </ul>
+        </div>
+
+        <div class="global-controls">
+            <button class="btn btn-start" onclick="startAllPersonas()" id="startAllBtn">
+                🚀 Start All Personas
+            </button>
+            <button class="btn btn-stop" onclick="stopAllPersonas()" id="stopAllBtn" disabled>
+                🛑 Stop All Personas
+            </button>
+        </div>
+
+        <div class="personas-grid">
+            <!-- Efficiency Maximizer -->
+            <div class="persona-card efficiency" id="efficiency-card">
+                <div class="persona-header">
+                    <div class="persona-icon">⚡</div>
+                    <div class="persona-title">
+                        <h3>Efficiency Maximizer</h3>
+                        <p>Strategic challenger focused on optimization</p>
+                    </div>
+                </div>
+                <div class="video-container">
+                    <video class="video-element" id="efficiency-video" style="display: none;"></video>
+                    <div class="video-placeholder" id="efficiency-placeholder">
+                        Click "Start" to begin video streaming
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="btn btn-start" onclick="startPersona('efficiency')" id="efficiency-start">
+                        ▶️ Start
+                    </button>
+                    <button class="btn btn-stop" onclick="stopPersona('efficiency')" id="efficiency-stop" disabled>
+                        ⏹️ Stop
+                    </button>
+                </div>
+                <div class="persona-info">
+                    <strong>Avatar ID:</strong> 3d4f6f63-157c-4469-b9bf-79534934cd71<br>
+                    <strong>Voice ID:</strong> 6bfbe25a-979d-40f3-a92b-5394170af54b<br>
+                    <strong>Status:</strong> <span id="efficiency-status">Ready</span>
+                </div>
+            </div>
+
+            <!-- Moonshot Incubator -->
+            <div class="persona-card moonshot" id="moonshot-card">
+                <div class="persona-header">
+                    <div class="persona-icon">🚀</div>
+                    <div class="persona-title">
+                        <h3>Moonshot Incubator</h3>
+                        <p>Breakthrough thinking and innovation</p>
+                    </div>
+                </div>
+                <div class="video-container">
+                    <video class="video-element" id="moonshot-video" style="display: none;"></video>
+                    <div class="video-placeholder" id="moonshot-placeholder">
+                        Click "Start" to begin video streaming
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="btn btn-start" onclick="startPersona('moonshot')" id="moonshot-start">
+                        ▶️ Start
+                    </button>
+                    <button class="btn btn-stop" onclick="stopPersona('moonshot')" id="moonshot-stop" disabled>
+                        ⏹️ Stop
+                    </button>
+                </div>
+                <div class="persona-info">
+                    <strong>Avatar ID:</strong> 70f7f686-6665-4e2b-8e80-049d0d70eb22<br>
+                    <strong>Voice ID:</strong> 6bfbe25a-979d-40f3-a92b-5394170af54b<br>
+                    <strong>Status:</strong> <span id="moonshot-status">Ready</span>
+                </div>
+            </div>
+
+            <!-- Customer Oracle -->
+            <div class="persona-card customer" id="customer-card">
+                <div class="persona-header">
+                    <div class="persona-icon">👥</div>
+                    <div class="persona-title">
+                        <h3>Customer Oracle</h3>
+                        <p>User-centric decision making</p>
+                    </div>
+                </div>
+                <div class="video-container">
+                    <video class="video-element" id="customer-video" style="display: none;"></video>
+                    <div class="video-placeholder" id="customer-placeholder">
+                        Click "Start" to begin video streaming
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="btn btn-start" onclick="startPersona('customer')" id="customer-start">
+                        ▶️ Start
+                    </button>
+                    <button class="btn btn-stop" onclick="stopPersona('customer')" id="customer-stop" disabled>
+                        ⏹️ Stop
+                    </button>
+                </div>
+                <div class="persona-info">
+                    <strong>Avatar ID:</strong> 8f55b051-aa5f-4656-913a-24232b166c52<br>
+                    <strong>Voice ID:</strong> 6bfbe25a-979d-40f3-a92b-5394170af54b<br>
+                    <strong>Status:</strong> <span id="customer-status">Ready</span>
+                </div>
+            </div>
+
+            <!-- Investor Mindset -->
+            <div class="persona-card investor" id="investor-card">
+                <div class="persona-header">
+                    <div class="persona-icon">💰</div>
+                    <div class="persona-title">
+                        <h3>Investor Mindset</h3>
+                        <p>Business viability and returns focus</p>
+                    </div>
+                </div>
+                <div class="video-container">
+                    <video class="video-element" id="investor-video" style="display: none;"></video>
+                    <div class="video-placeholder" id="investor-placeholder">
+                        Click "Start" to begin video streaming
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="btn btn-start" onclick="startPersona('investor')" id="investor-start">
+                        ▶️ Start
+                    </button>
+                    <button class="btn btn-stop" onclick="stopPersona('investor')" id="investor-stop" disabled>
+                        ⏹️ Stop
+                    </button>
+                </div>
+                <div class="persona-info">
+                    <strong>Avatar ID:</strong> 20c53fa6-963b-41b5-9713-36e41f5a77f8<br>
+                    <strong>Voice ID:</strong> 6bfbe25a-979d-40f3-a92b-5394170af54b<br>
+                    <strong>Status:</strong> <span id="investor-status">Ready</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="logs" id="logs">
+            <div class="log-entry log-info">🔄 Persona validation page loaded successfully</div>
+            <div class="log-entry log-info">📋 Ready to test 4 challenger personas</div>
+            <div class="log-entry log-warning">⚠️ Anam SDK will be loaded dynamically when needed</div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Configuration using local proxy server
+        const CONFIG = {
+            apiKey: 'configured', // Using local proxy server
+            baseURL: 'http://localhost:8081/api',
+            personas: {
+                efficiency: {
+                    name: 'Efficiency Maximizer',
+                    avatarId: '3d4f6f63-157c-4469-b9bf-79534934cd71',
+                    voiceId: '6bfbe25a-979d-40f3-a92b-5394170af54b',
+                    llmId: '0934d97d-0c3a-4f33-91b0-5e136a0ef466'
+                },
+                moonshot: {
+                    name: 'Moonshot Incubator',
+                    avatarId: '70f7f686-6665-4e2b-8e80-049d0d70eb22',
+                    voiceId: '6bfbe25a-979d-40f3-a92b-5394170af54b',
+                    llmId: '0934d97d-0c3a-4f33-91b0-5e136a0ef466'
+                },
+                customer: {
+                    name: 'Customer Oracle',
+                    avatarId: '8f55b051-aa5f-4656-913a-24232b166c52',
+                    voiceId: '6bfbe25a-979d-40f3-a92b-5394170af54b',
+                    llmId: '0934d97d-0c3a-4f33-91b0-5e136a0ef466'
+                },
+                investor: {
+                    name: 'Investor Mindset',
+                    avatarId: '20c53fa6-963b-41b5-9713-36e41f5a77f8',
+                    voiceId: '6bfbe25a-979d-40f3-a92b-5394170af54b',
+                    llmId: '0934d97d-0c3a-4f33-91b0-5e136a0ef466'
+                }
+            }
+        };
+
+        // Global state
+        let AnamSDK = null;
+        let activeClients = {};
+        let sessionTokens = {};
+
+        // Logging utility
+        function log(message, type = 'info') {
+            const logs = document.getElementById('logs');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            
+            const icons = {
+                info: 'ℹ️',
+                success: '✅',
+                error: '❌',
+                warning: '⚠️'
+            };
+            
+            logEntry.textContent = `${timestamp} ${icons[type]} ${message}`;
+            logs.appendChild(logEntry);
+            logs.scrollTop = logs.scrollHeight;
+        }
+
+        // Update status indicators
+        function updateStatus(persona, status) {
+            const statusElement = document.getElementById(`${persona}-status`);
+            if (statusElement) {
+                statusElement.textContent = status;
+            }
+        }
+
+        function updateGlobalStatus(status, type = 'loading') {
+            const globalStatus = document.getElementById('globalStatus');
+            globalStatus.textContent = status;
+            globalStatus.className = `status-indicator status-${type}`;
+        }
+
+        // Load Anam SDK with CDN priority and comprehensive fallbacks
+        async function loadAnamSDK() {
+            if (AnamSDK) return true;
+            
+            try {
+                log('Loading Anam SDK with CDN priority...', 'info');
+                
+                // Check if SDK is already loaded globally
+                if (window.anam) {
+                    AnamSDK = window.anam;
+                    log('Anam SDK found in global scope', 'success');
+                    return true;
+                }
+                
+                // Try multiple SDK loading methods in order of preference
+                const sdkSources = [
+                    {
+                        name: 'Official CDN (Latest)',
+                        url: 'https://unpkg.com/@anam-ai/js-sdk@latest/dist/umd/anam.js'
+                    },
+                    {
+                        name: 'Official CDN (v3.4.1)',
+                        url: 'https://unpkg.com/@anam-ai/js-sdk@3.4.1/dist/umd/anam.js'
+                    },
+                    {
+                        name: 'Local UMD Bundle',
+                        url: './anam-sdk/umd/anam.js'
+                    },
+                    {
+                        name: 'JSDelivr CDN',
+                        url: 'https://cdn.jsdelivr.net/npm/@anam-ai/js-sdk@latest/dist/umd/anam.js'
+                    }
+                ];
+                
+                for (const source of sdkSources) {
+                    try {
+                        log(`Trying ${source.name}...`, 'info');
+                        
+                        const success = await new Promise((resolve, reject) => {
+                            const script = document.createElement('script');
+                            script.src = source.url;
+                            script.onload = () => {
+                                if (window.anam) {
+                                    AnamSDK = window.anam;
+                                    log(`✅ SDK loaded successfully from ${source.name}`, 'success');
+                                    resolve(true);
+                                } else {
+                                    log(`❌ ${source.name} loaded but anam not found in global scope`, 'warning');
+                                    resolve(false);
+                                }
+                            };
+                            script.onerror = () => {
+                                log(`❌ Failed to load from ${source.name}`, 'warning');
+                                resolve(false);
+                            };
+                            document.head.appendChild(script);
+                        });
+                        
+                        if (success) return true;
+                        
+                    } catch (error) {
+                        log(`Error with ${source.name}: ${error.message}`, 'warning');
+                        continue;
+                    }
+                }
+                
+                throw new Error('All SDK loading methods failed');
+                
+            } catch (error) {
+                log(`Failed to load Anam SDK: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        // Get API key from local proxy server (no user input needed)
+        async function getApiKey() {
+            // Check if local proxy server is running
+            try {
+                const response = await fetch(`${CONFIG.baseURL.replace('/api', '')}/api/health`);
+                const data = await response.json();
+                if (data.apiKey === 'configured') {
+                    log('Local proxy server detected with configured API key', 'success');
+                    return 'configured';
+                } else {
+                    throw new Error('API key not configured in proxy server');
+                }
+            } catch (error) {
+                log('Local proxy server not available - please start it first', 'error');
+                throw new Error('Local proxy server required');
+            }
+        }
+
+        // Generate session token for a persona using local proxy
+        async function generateSessionToken(persona) {
+            try {
+                await getApiKey(); // Verify proxy server is available
+                const personaConfig = CONFIG.personas[persona];
+                
+                log(`Generating session token for ${personaConfig.name}...`, 'info');
+                updateStatus(persona, 'Generating token...');
+                
+                const response = await fetch(`${CONFIG.baseURL}/anam/session-token`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        persona: persona
+                    })
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(`HTTP ${response.status}: ${errorData.error || response.statusText}`);
+                }
+                
+                const data = await response.json();
+                sessionTokens[persona] = data.sessionToken;
+                
+                log(`Session token generated for ${personaConfig.name}`, 'success');
+                updateStatus(persona, 'Token ready');
+                
+                return data.sessionToken;
+            } catch (error) {
+                log(`Failed to generate session token for ${persona}: ${error.message}`, 'error');
+                updateStatus(persona, 'Token failed');
+                throw error;
+            }
+        }
+
+        // Request media permissions proactively
+        async function requestMediaPermissions() {
+            try {
+                log('Requesting media permissions...', 'info');
+                
+                // Request camera and microphone permissions
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: true
+                });
+                
+                // Stop the stream immediately - we just needed permissions
+                stream.getTracks().forEach(track => track.stop());
+                
+                log('Media permissions granted successfully', 'success');
+                return true;
+            } catch (error) {
+                log(`Media permissions denied or unavailable: ${error.message}`, 'warning');
+                log('This may affect streaming quality but video-only streaming should still work', 'info');
+                return false;
+            }
+        }
+
+        // Start streaming for a persona
+        async function startPersona(persona) {
+            try {
+                log(`Starting ${persona} persona...`, 'info');
+                updateStatus(persona, 'Starting...');
+                
+                // Load SDK if needed
+                if (!await loadAnamSDK()) {
+                    throw new Error('Anam SDK not available');
+                }
+                
+                // Request media permissions first
+                await requestMediaPermissions();
+                
+                // Generate session token if needed
+                if (!sessionTokens[persona]) {
+                    await generateSessionToken(persona);
+                }
+                
+                // Create SDK client with enhanced configuration
+                log(`Creating SDK client for ${persona}...`, 'info');
+                
+                // Enhanced client configuration
+                const clientConfig = {
+                    sessionToken: sessionTokens[persona],
+                    // Add any additional configuration options here
+                    debug: true // Enable debug mode for better error reporting
+                };
+                
+                const client = AnamSDK.createClient(sessionTokens[persona]);
+                activeClients[persona] = client;
+                
+                // Get video element
+                const videoElement = document.getElementById(`${persona}-video`);
+                const placeholder = document.getElementById(`${persona}-placeholder`);
+                
+                // Enhanced video element configuration
+                videoElement.autoplay = true;
+                videoElement.muted = true; // Required for autoplay in most browsers
+                videoElement.playsInline = true; // Required for mobile browsers
+                videoElement.controls = false; // Hide video controls
+                videoElement.preload = 'metadata';
+                
+                // Add comprehensive event listeners for debugging
+                log(`Setting up event listeners for ${persona}...`, 'info');
+                
+                client.addListener('CONNECTION_ESTABLISHED', () => {
+                    log(`${persona}: WebRTC connection established`, 'success');
+                    updateStatus(persona, 'Connected');
+                });
+                
+                client.addListener('CONNECTION_CLOSED', (code, reason) => {
+                    log(`${persona}: Connection closed - ${code}: ${reason}`, 'warning');
+                    updateStatus(persona, 'Disconnected');
+                });
+                
+                client.addListener('VIDEO_STREAM_STARTED', () => {
+                    log(`${persona}: Video stream started`, 'success');
+                    // Show video, hide placeholder
+                    videoElement.style.display = 'block';
+                    placeholder.style.display = 'none';
+                    updateStatus(persona, 'Streaming');
+                });
+                
+                client.addListener('AUDIO_STREAM_STARTED', () => {
+                    log(`${persona}: Audio stream started`, 'success');
+                });
+                
+                client.addListener('ERROR', (error) => {
+                    log(`${persona}: SDK Error - ${error.message}`, 'error');
+                    updateStatus(persona, 'Error');
+                });
+                
+                client.addListener('STREAM_READY', () => {
+                    log(`${persona}: Stream ready for interaction`, 'success');
+                    updateStatus(persona, 'Ready');
+                });
+                
+                // Add video element event listeners
+                videoElement.addEventListener('loadstart', () => {
+                    log(`${persona}: Video loading started`, 'info');
+                });
+                
+                videoElement.addEventListener('loadeddata', () => {
+                    log(`${persona}: Video data loaded`, 'success');
+                });
+                
+                videoElement.addEventListener('canplay', () => {
+                    log(`${persona}: Video can start playing`, 'success');
+                });
+                
+                videoElement.addEventListener('error', (e) => {
+                    log(`${persona}: Video element error - ${e.message}`, 'error');
+                });
+                
+                // Start streaming with enhanced error handling
+                log(`Initializing video stream for ${persona}...`, 'info');
+                updateStatus(persona, 'Connecting...');
+                
+                try {
+                    // Use a timeout to detect hanging connections
+                    const streamingPromise = client.streamToVideoElement(videoElement);
+                    const timeoutPromise = new Promise((_, reject) => {
+                        setTimeout(() => reject(new Error('Streaming timeout after 30 seconds')), 30000);
+                    });
+                    
+                    await Promise.race([streamingPromise, timeoutPromise]);
+                    
+                    // Update UI immediately (video will show when stream starts)
+                    document.getElementById(`${persona}-start`).disabled = true;
+                    document.getElementById(`${persona}-stop`).disabled = false;
+                    document.getElementById(`${persona}-card`).classList.add('active');
+                    
+                    log(`${CONFIG.personas[persona].name} streaming initiated successfully`, 'success');
+                    
+                    // Additional verification - check if video element has a source
+                    setTimeout(() => {
+                        if (videoElement.srcObject || videoElement.src) {
+                            log(`${persona}: Video source confirmed`, 'success');
+                        } else {
+                            log(`${persona}: Warning - No video source detected after 5 seconds`, 'warning');
+                        }
+                    }, 5000);
+                    
+                } catch (streamError) {
+                    // Enhanced error handling with specific error types
+                    log(`Streaming error for ${persona}: ${streamError.name} - ${streamError.message}`, 'error');
+                    
+                    if (streamError.message.includes('timeout')) {
+                        log(`${persona}: Connection timeout - this may indicate network issues or server problems`, 'error');
+                        updateStatus(persona, 'Timeout');
+                    } else if (streamError.message.includes('Permission denied') || streamError.name === 'NotAllowedError') {
+                        log(`${persona}: Media permission denied - trying video-only mode`, 'warning');
+                        updateStatus(persona, 'Permission denied');
+                    } else if (streamError.message.includes('getUserMedia') || streamError.message.includes('MediaDevices')) {
+                        log(`${persona}: Media device access issue - checking browser compatibility`, 'warning');
+                        updateStatus(persona, 'Media access issue');
+                    } else if (streamError.message.includes('WebRTC') || streamError.message.includes('ICE')) {
+                        log(`${persona}: WebRTC connection issue - this may be a network/firewall problem`, 'error');
+                        updateStatus(persona, 'WebRTC issue');
+                    } else if (streamError.message.includes('session') || streamError.message.includes('token')) {
+                        log(`${persona}: Session/token issue - regenerating token and retrying...`, 'warning');
+                        updateStatus(persona, 'Token issue');
+                        
+                        // Try regenerating token and retrying once
+                        try {
+                            delete sessionTokens[persona];
+                            await generateSessionToken(persona);
+                            const newClient = AnamSDK.createClient(sessionTokens[persona]);
+                            activeClients[persona] = newClient;
+                            await newClient.streamToVideoElement(videoElement);
+                            log(`${persona}: Retry with new token successful`, 'success');
+                            return; // Exit early on success
+                        } catch (retryError) {
+                            log(`${persona}: Retry failed: ${retryError.message}`, 'error');
+                        }
+                    } else {
+                        log(`${persona}: Unexpected streaming error: ${JSON.stringify({
+                            name: streamError.name,
+                            message: streamError.message,
+                            stack: streamError.stack?.split('\n')[0]
+                        })}`, 'error');
+                    }
+                    
+                    // Log browser and environment info for debugging
+                    log(`Browser info: ${navigator.userAgent}`, 'info');
+                    log(`WebRTC support: ${!!window.RTCPeerConnection}`, 'info');
+                    log(`MediaDevices support: ${!!navigator.mediaDevices}`, 'info');
+                    
+                    throw streamError;
+                }
+                
+            } catch (error) {
+                log(`Failed to start ${persona}: ${error.name} - ${error.message}`, 'error');
+                log(`Error details: ${JSON.stringify({
+                    name: error.name,
+                    message: error.message,
+                    stack: error.stack?.split('\n').slice(0, 3).join('\n')
+                })}`, 'error');
+                
+                updateStatus(persona, 'Failed');
+                
+                // Reset UI on error
+                document.getElementById(`${persona}-start`).disabled = false;
+                document.getElementById(`${persona}-stop`).disabled = true;
+                document.getElementById(`${persona}-card`).classList.remove('active');
+                
+                // Provide user-friendly error guidance
+                if (error.message.includes('SDK not available')) {
+                    log('💡 Suggestion: Check internet connection and try refreshing the page', 'info');
+                } else if (error.message.includes('proxy server')) {
+                    log('💡 Suggestion: Start the local proxy server with: node tests/local-proxy-server.js', 'info');
+                } else if (error.message.includes('session') || error.message.includes('token')) {
+                    log('💡 Suggestion: Check API key configuration in .env file', 'info');
+                } else {
+                    log('💡 Suggestion: Check browser console for additional error details', 'info');
+                }
+            }
+        }
+
+        // Stop streaming for a persona
+        async function stopPersona(persona) {
+            try {
+                log(`Stopping ${persona} persona...`, 'info');
+                updateStatus(persona, 'Stopping...');
+                
+                // Stop streaming
+                if (activeClients[persona]) {
+                    activeClients[persona].stopStreaming();
+                    delete activeClients[persona];
+                }
+                
+                // Hide video, show placeholder
+                const videoElement = document.getElementById(`${persona}-video`);
+                const placeholder = document.getElementById(`${persona}-placeholder`);
+                
+                videoElement.style.display = 'none';
+                placeholder.style.display = 'flex';
+                
+                // Update UI
+                document.getElementById(`${persona}-start`).disabled = false;
+                document.getElementById(`${persona}-stop`).disabled = true;
+                document.getElementById(`${persona}-card`).classList.remove('active');
+                
+                updateStatus(persona, 'Stopped');
+                log(`${CONFIG.personas[persona].name} streaming stopped`, 'success');
+                
+            } catch (error) {
+                log(`Error stopping ${persona}: ${error.message}`, 'error');
+                updateStatus(persona, 'Error');
+            }
+        }
+
+        // Start all personas
+        window.startAllPersonas = async function() {
+            try {
+                log('Starting all personas...', 'info');
+                updateGlobalStatus('🚀 Starting all personas...', 'loading');
+                
+                document.getElementById('startAllBtn').disabled = true;
+                
+                const personas = Object.keys(CONFIG.personas);
+                const promises = personas.map(persona => startPersona(persona));
+                
+                await Promise.allSettled(promises);
+                
+                document.getElementById('stopAllBtn').disabled = false;
+                updateGlobalStatus('✅ All personas active', 'ready');
+                log('All personas started', 'success');
+                
+            } catch (error) {
+                log(`Error starting all personas: ${error.message}`, 'error');
+                updateGlobalStatus('❌ Error starting personas', 'error');
+                document.getElementById('startAllBtn').disabled = false;
+            }
+        };
+
+        // Stop all personas
+        window.stopAllPersonas = async function() {
+            try {
+                log('Stopping all personas...', 'info');
+                updateGlobalStatus('🛑 Stopping all personas...', 'loading');
+                
+                document.getElementById('stopAllBtn').disabled = true;
+                
+                const personas = Object.keys(CONFIG.personas);
+                const promises = personas.map(persona => stopPersona(persona));
+                
+                await Promise.allSettled(promises);
+                
+                document.getElementById('startAllBtn').disabled = false;
+                updateGlobalStatus('⏹️ All personas stopped', 'ready');
+                log('All personas stopped', 'success');
+                
+            } catch (error) {
+                log(`Error stopping all personas: ${error.message}`, 'error');
+                updateGlobalStatus('❌ Error stopping personas', 'error');
+                document.getElementById('stopAllBtn').disabled = false;
+            }
+        };
+
+        // Make functions available globally
+        window.startPersona = startPersona;
+        window.stopPersona = stopPersona;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', async function() {
+            log('Persona validation page initialized', 'success');
+            updateGlobalStatus('✅ Ready for testing', 'ready');
+            
+            // Check if local proxy server is available
+            if (window.location.hostname === 'localhost') {
+                log('Running locally - checking proxy server availability...', 'info');
+                try {
+                    const response = await fetch('http://localhost:8081/api/health');
+                    const data = await response.json();
+                    if (data.apiKey === 'configured') {
+                        log('✅ Local proxy server available with API key configured', 'success');
+                    } else {
+                        log('⚠️ Local proxy server available but API key not configured', 'warning');
+                    }
+                } catch (error) {
+                    log('❌ Local proxy server not available - please start it with: node local-proxy-server.js', 'error');
+                }
+            }
+        });
+
+        // Handle page unload
+        window.addEventListener('beforeunload', function() {
+            // Stop all active streams
+            Object.keys(activeClients).forEach(persona => {
+                try {
+                    activeClients[persona].stopStreaming();
+                } catch (error) {
+                    console.error(`Error stopping ${persona}:`, error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

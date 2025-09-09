@@ -677,3 +677,197 @@
 {"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T09:51:41.226Z"}
 {"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T09:51:41.239Z"}
 {"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T09:51:41.240Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T10:15:41.826Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T10:15:41.835Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T10:15:41.835Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T10:16:10.394Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T10:16:10.400Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T10:16:10.400Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T10:16:41.971Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T10:16:41.979Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T10:16:41.979Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T10:33:20.722Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T10:33:20.729Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T10:33:20.730Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T11:16:38.658Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T11:16:38.667Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T11:16:38.668Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T11:29:52.954Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T11:29:52.963Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T11:29:52.964Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T11:30:59.030Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T11:30:59.039Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T11:30:59.040Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T12:00:04.927Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T12:00:04.936Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T12:00:04.936Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T12:00:24.884Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T12:00:24.893Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T12:00:24.894Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T12:02:59.196Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T12:02:59.203Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T12:02:59.204Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T12:03:45.207Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T12:03:45.220Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T12:03:45.221Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T12:04:15.324Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T12:04:15.334Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T12:04:15.335Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T12:10:17.196Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T12:10:17.205Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T12:10:17.206Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T12:52:14.015Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T12:52:14.021Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T12:52:14.021Z"}
+{"level":"info","message":"🔌 Client connected: BpfbHzBWgciO-KriAAAB","timestamp":"2025-09-07T12:52:30.008Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client BpfbHzBWgciO-KriAAAB:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T12:52:34.823Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client BpfbHzBWgciO-KriAAAB","timestamp":"2025-09-07T12:52:34.824Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T12:52:34.824Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=ddd1413b-9584-421a-8622-df8d48f87016, mode=efficiency","timestamp":"2025-09-07T12:52:34.825Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T12:52:34.825Z"}
+{"level":"info","message":"🔧 Initializing session ddd1413b-9584-421a-8622-df8d48f87016 in efficiency mode","timestamp":"2025-09-07T12:52:34.827Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T12:52:34.827Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T12:52:34.828Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T12:52:34.829Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T12:52:34.831Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T12:52:34.831Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T12:52:36.147Z"}
+{"level":"info","message":"Session ddd1413b-9584-421a-8622-df8d48f87016 initialized successfully","timestamp":"2025-09-07T12:52:36.149Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T12:52:36.149Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T12:52:36.166Z"}
+{"avatarId":"481542ce-2746-4989-bd70-1c3e8ebd069e","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T12:52:36.166Z","voiceId":"16148043-eed4-4bb8-ac0f-78ffd744ffcb"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T12:52:36.860Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:01:38.592Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:01:38.599Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:01:38.600Z"}
+{"level":"info","message":"🔌 Client connected: wevwI2ADGO16RsuIAAAB","timestamp":"2025-09-07T13:01:40.820Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client wevwI2ADGO16RsuIAAAB:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T13:01:50.689Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client wevwI2ADGO16RsuIAAAB","timestamp":"2025-09-07T13:01:50.690Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T13:01:50.691Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=fa1e836b-dfea-42ba-912e-18b93102259c, mode=efficiency","timestamp":"2025-09-07T13:01:50.693Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T13:01:50.694Z"}
+{"level":"info","message":"🔧 Initializing session fa1e836b-dfea-42ba-912e-18b93102259c in efficiency mode","timestamp":"2025-09-07T13:01:50.695Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T13:01:50.696Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T13:01:50.698Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T13:01:50.698Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T13:01:50.700Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T13:01:50.701Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T13:01:51.445Z"}
+{"level":"info","message":"Session fa1e836b-dfea-42ba-912e-18b93102259c initialized successfully","timestamp":"2025-09-07T13:01:51.447Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T13:01:51.447Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:09:26.379Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:09:26.386Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:09:26.387Z"}
+{"level":"info","message":"🔌 Client connected: P0j0cNf0I6RFalugAAAB","timestamp":"2025-09-07T13:09:27.242Z"}
+{"level":"info","message":"🔌 Client disconnected: P0j0cNf0I6RFalugAAAB","timestamp":"2025-09-07T13:09:50.332Z"}
+{"level":"info","message":"🔌 Client connected: tkSDXmtnwJPO5jqgAAAD","timestamp":"2025-09-07T13:09:50.740Z"}
+{"companyData":{"industry":"technology","name":"Demo Company","size":"startup"},"level":"info","message":"Received start-session event from client tkSDXmtnwJPO5jqgAAAD:","mode":"strategic_challenge","persona":"efficiency","timestamp":"2025-09-07T13:09:55.062Z","userContext":{"name":"Strategic Leader","role":"decision maker"}}
+{"level":"info","message":"🚀 Starting efficiency persona session for client tkSDXmtnwJPO5jqgAAAD","timestamp":"2025-09-07T13:09:55.063Z"}
+{"level":"info","message":"📝 Creating UnhingedColleagueSession instance...","timestamp":"2025-09-07T13:09:55.064Z"}
+{"level":"info","message":"🆕 UnhingedColleagueSession constructor called: sessionId=9022c415-e31e-41d7-a3e5-76eb58833787, mode=efficiency","timestamp":"2025-09-07T13:09:55.065Z"}
+{"level":"info","message":"🔧 Initializing session services...","timestamp":"2025-09-07T13:09:55.066Z"}
+{"level":"info","message":"🔧 Initializing session 9022c415-e31e-41d7-a3e5-76eb58833787 in efficiency mode","timestamp":"2025-09-07T13:09:55.066Z"}
+{"level":"info","message":"🎙️ Initializing ElevenLabs service...","timestamp":"2025-09-07T13:09:55.066Z"}
+{"level":"info","message":"✅ Real ElevenLabs service initialized","timestamp":"2025-09-07T13:09:55.067Z"}
+{"level":"info","message":"🧠 Initializing OpenAI service...","timestamp":"2025-09-07T13:09:55.067Z"}
+{"level":"info","message":"✅ Real OpenAI service initialized","timestamp":"2025-09-07T13:09:55.069Z"}
+{"level":"info","message":"🎭 Initializing Anam service...","timestamp":"2025-09-07T13:09:55.069Z"}
+{"level":"info","message":"✅ Real Anam service initialized","timestamp":"2025-09-07T13:09:55.894Z"}
+{"level":"info","message":"Session 9022c415-e31e-41d7-a3e5-76eb58833787 initialized successfully","timestamp":"2025-09-07T13:09:55.896Z"}
+{"level":"info","message":"✅ Session initialization completed","timestamp":"2025-09-07T13:09:55.896Z"}
+{"level":"info","message":"🎭 Generating Anam session token for persona: efficiency","timestamp":"2025-09-07T13:09:55.917Z"}
+{"avatarId":"481542ce-2746-4989-bd70-1c3e8ebd069e","level":"info","llmId":"0934d97d-0c3a-4f33-91b0-5e136a0ef466","message":"🔍 Anam API payload:","timestamp":"2025-09-07T13:09:55.918Z","voiceId":"16148043-eed4-4bb8-ac0f-78ffd744ffcb"}
+{"level":"info","message":"✅ Anam session token generated successfully for Efficiency Maximizer","timestamp":"2025-09-07T13:09:56.504Z"}
+{"level":"info","message":"🔌 Client disconnected: tkSDXmtnwJPO5jqgAAAD","timestamp":"2025-09-07T13:11:42.542Z"}
+{"level":"info","message":"🧹 Cleaning up session for disconnected client tkSDXmtnwJPO5jqgAAAD","timestamp":"2025-09-07T13:11:42.542Z"}
+{"level":"info","message":"Cleaning up session 9022c415-e31e-41d7-a3e5-76eb58833787","timestamp":"2025-09-07T13:11:42.542Z"}
+{"challengesIssued":0,"duration":2,"finalPhase":"provocation","level":"info","message":"Session 9022c415-e31e-41d7-a3e5-76eb58833787 completed:","mode":"efficiency","timestamp":"2025-09-07T13:11:42.543Z","totalExchanges":0}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:12:39.169Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:12:39.177Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:12:39.177Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:12:53.097Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:12:53.105Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:12:53.106Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:13:29.661Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:13:29.669Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:13:29.669Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:15:07.956Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:15:07.963Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:15:07.964Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:16:27.985Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:16:27.994Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:16:27.994Z"}
+{"level":"info","message":"🔌 Client connected: WI5sKEwz4pu4V-hqAAAB","timestamp":"2025-09-07T13:17:08.431Z"}
+{"level":"info","message":"🔌 Client disconnected: WI5sKEwz4pu4V-hqAAAB","timestamp":"2025-09-07T13:17:12.275Z"}
+{"level":"info","message":"🔌 Client connected: pNSKXF8SLofW4_ZbAAAD","timestamp":"2025-09-07T13:17:15.450Z"}
+{"level":"info","message":"🔌 Client disconnected: pNSKXF8SLofW4_ZbAAAD","timestamp":"2025-09-07T13:17:19.849Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:18:50.931Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:18:50.937Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:18:50.938Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:18:59.833Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:18:59.842Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:18:59.842Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:24:17.991Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:24:17.999Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:24:17.999Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:24:27.106Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:24:27.114Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:24:27.114Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:24:58.400Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:24:58.407Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:24:58.407Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:30:05.010Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5001","timestamp":"2025-09-07T13:30:05.025Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5001","timestamp":"2025-09-07T13:30:05.026Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:32:56.216Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5010","timestamp":"2025-09-07T13:32:56.222Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5010","timestamp":"2025-09-07T13:32:56.222Z"}
+{"level":"info","message":"🔌 Client connected: pVaOcYtq47tHxwWdAAAB","timestamp":"2025-09-07T13:33:05.750Z"}
+{"level":"info","message":"🔌 Client disconnected: pVaOcYtq47tHxwWdAAAB","timestamp":"2025-09-07T13:33:14.579Z"}
+{"level":"info","message":"🔌 Client connected: rfqM0IbXQh-fsZljAAAD","timestamp":"2025-09-07T13:33:34.405Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:34:42.756Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5010","timestamp":"2025-09-07T13:34:42.764Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5010","timestamp":"2025-09-07T13:34:42.764Z"}
+{"level":"info","message":"🔌 Client connected: 4h9EOjevlnhFC1-MAAAB","timestamp":"2025-09-07T13:34:42.784Z"}
+{"level":"info","message":"🔌 Client disconnected: 4h9EOjevlnhFC1-MAAAB","timestamp":"2025-09-07T13:34:51.650Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:35:59.480Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5010","timestamp":"2025-09-07T13:35:59.489Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5010","timestamp":"2025-09-07T13:35:59.489Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:36:11.028Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5010","timestamp":"2025-09-07T13:36:11.041Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5010","timestamp":"2025-09-07T13:36:11.041Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:36:47.400Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5010","timestamp":"2025-09-07T13:36:47.407Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5010","timestamp":"2025-09-07T13:36:47.408Z"}
+{"level":"info","message":"🔌 Client connected: apoTeakFXIgTR243AAAB","timestamp":"2025-09-07T13:37:09.324Z"}
+{"level":"info","message":"🔌 Client disconnected: apoTeakFXIgTR243AAAB","timestamp":"2025-09-07T13:37:13.545Z"}
+{"level":"info","message":"🔌 Client connected: 635Auxg8SKCoyei4AAAD","timestamp":"2025-09-07T13:37:13.687Z"}
+{"level":"info","message":"🔌 Client disconnected: 635Auxg8SKCoyei4AAAD","timestamp":"2025-09-07T13:37:16.332Z"}
+{"level":"info","message":"🔌 Client connected: H-EAVek-Ee2NxCqqAAAF","timestamp":"2025-09-07T13:37:19.987Z"}
+{"level":"info","message":"🔌 Client disconnected: H-EAVek-Ee2NxCqqAAAF","timestamp":"2025-09-07T13:37:24.009Z"}
+{"level":"info","message":"🔌 Client connected: 3_cmkwEXTuCkzP23AAAH","timestamp":"2025-09-07T13:37:41.894Z"}
+{"level":"info","message":"🔌 Client disconnected: 3_cmkwEXTuCkzP23AAAH","timestamp":"2025-09-07T13:39:04.198Z"}
+{"level":"info","message":"🔌 Client connected: UgZs-DYaVQfhqMSBAAAJ","timestamp":"2025-09-07T13:39:04.388Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:39:22.728Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5010","timestamp":"2025-09-07T13:39:22.742Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5010","timestamp":"2025-09-07T13:39:22.742Z"}
+{"level":"info","message":"🔌 Client connected: 7Mr9KxJoqBZS9gpEAAAB","timestamp":"2025-09-07T13:39:22.819Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:40:15.875Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5010","timestamp":"2025-09-07T13:40:15.887Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5010","timestamp":"2025-09-07T13:40:15.888Z"}
+{"level":"info","message":"🔌 Client connected: ETY09wPgHUZ9CZ5WAAAB","timestamp":"2025-09-07T13:40:17.235Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:40:24.696Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5010","timestamp":"2025-09-07T13:40:24.707Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5010","timestamp":"2025-09-07T13:40:24.708Z"}
+{"level":"info","message":"🔌 Client connected: D44KpBi3oZCNvsHXAAAB","timestamp":"2025-09-07T13:40:27.233Z"}
+{"level":"info","message":"✅ API key validation successful","timestamp":"2025-09-07T13:40:37.259Z"}
+{"level":"info","message":"🚀 Unhinged Colleague server running on port 5010","timestamp":"2025-09-07T13:40:37.267Z"}
+{"level":"info","message":"💬 Ready to challenge your thinking at http://localhost:5010","timestamp":"2025-09-07T13:40:37.268Z"}
+{"level":"info","message":"🔌 Client connected: XpgI27ruicZovVKHAAAB","timestamp":"2025-09-07T13:40:40.234Z"}
+{"level":"info","message":"🔌 Client disconnected: XpgI27ruicZovVKHAAAB","timestamp":"2025-09-07T13:40:57.150Z"}
+{"level":"info","message":"🔌 Client connected: 226sk8m9ZcAiXcoWAAAD","timestamp":"2025-09-07T13:40:57.378Z"}
+{"level":"info","message":"🔌 Client connected: C6I5KdbKS4c8Q-5vAAAF","timestamp":"2025-09-07T13:42:30.593Z"}
+{"level":"info","message":"🔌 Client disconnected: C6I5KdbKS4c8Q-5vAAAF","timestamp":"2025-09-07T13:42:34.885Z"}
+{"level":"info","message":"🔌 Client connected: 4QbNWI8olYGBAkw_AAAH","timestamp":"2025-09-07T13:42:35.059Z"}
+{"level":"info","message":"🔌 Client disconnected: 226sk8m9ZcAiXcoWAAAD","timestamp":"2025-09-07T13:42:37.085Z"}
+{"level":"info","message":"🔌 Client disconnected: 4QbNWI8olYGBAkw_AAAH","timestamp":"2025-09-07T13:43:17.253Z"}

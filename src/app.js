@@ -10,7 +10,9 @@ import winston from 'winston';
 
 import { UnhingedColleagueSession } from './services/UnhingedColleagueSession.js';
 import { ChallengerPersona } from './persona/ChallengerPersona.js';
+import { ElevenLabsService } from './services/ElevenLabsService.js';
 import { validateApiKeys } from './utils/validation.js';
+import multer from 'multer';
 
 // ES Module setup
 const __filename = fileURLToPath(import.meta.url);
@@ -235,6 +237,47 @@ app.post('/api/anam/session-token', async (req, res) => {
   } catch (error) {
     logger.error('❌ Failed to generate Anam session token:', error.message);
     res.status(500).json({ error: 'Failed to generate session token' });
+  }
+});
+
+// Configure multer for file uploads
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024 // 10MB limit
+  }
+});
+
+// Initialize ElevenLabs service
+const elevenLabsService = new ElevenLabsService();
+
+// ElevenLabs Speech-to-Text API endpoint
+app.post('/api/elevenlabs/stt', upload.single('audio'), async (req, res) => {
+  try {
+    logger.info('🎤 Received STT request from client');
+    
+    if (!req.file) {
+      return res.status(400).json({ error: 'No audio file provided' });
+    }
+    
+    logger.info(`📊 Processing audio file: ${req.file.size} bytes`);
+    
+    // Convert audio to text using ElevenLabs
+    const transcription = await elevenLabsService.speechToText(req.file.buffer);
+    
+    logger.info(`✅ STT successful: "${transcription}"`);
+    
+    res.json({
+      text: transcription,
+      success: true
+    });
+    
+  } catch (error) {
+    logger.error('❌ ElevenLabs STT API error:', error.message);
+    res.status(500).json({ 
+      error: 'Speech-to-text processing failed',
+      message: error.message
+    });
   }
 });
 
